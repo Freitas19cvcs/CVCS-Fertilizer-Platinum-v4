@@ -1,15 +1,26 @@
-# CVCS Fertilizer Platinum v4.0
+# CVCS Turf + Irrigation Platinum v4.1
 
-An iPad-first landscape maintenance operating system for Central Valley Commercial Services, Inc.
+Live iPad-first landscape maintenance application for CVCS Landscaping.
 
-## v4 foundation
+## v4.1 easy-mode command system
 
-- Account Command Center with live status cards, tiers, filters, active programs, and Next Best Action
-- Property Brain with condition, history, programs, and printable account profile
-- Property walk-through for turf, weeds, fungus, irrigation, trees, shrubs, soil, and safety
-- Existing fertilizer scheduling, products, programs, PDFs, history, bids, and account data preserved
-- Installable PWA for iPad and iPhone
+- Six large iPad navigation buttons, larger account cards, plain-language status colors, and large touch targets.
+- Correct Gold, Silver, and Bronze assignments imported from the CVCS Tier Master workbook.
+- Connected care tiers: Gold (6 treatment windows), Silver (4), and Bronze (2).
+- Separate property plans for standard sites, McDonald's, apartments, shrub-heavy properties, and recovery sites.
+- Step-by-step workflows for fertilizer, fungus, weeds, irrigation, aeration, and seed work.
+- Jalin Weststeyn's 13-step September-December 2026 recovery calendar is preloaded.
+- Multi-controller irrigation profiles with timer location, brand/model, programs, and station-by-station mapping.
+- Jalin's Programs A/B/C, Stations 1-20, seasonal settings, and seed-watering override are preloaded.
+- Walk-through findings can automatically start weed, fungus, or irrigation workflows.
+- Work Week view plus monthly, active-cycle, annual forecast, and individual-property PDF reports.
+- Exact generated v4.1 PDFs are kept in on-device report history for reprinting.
+- Existing v3.2 scheduler, products, diagnosis library, compliance reports, bids, history, and account data remain available under More.
 
 ## Data safety
 
-The current release preserves the existing device data model and JSON backup/restore. Cloud synchronization and multi-user permissions are planned for a controlled future release.
+This release is intentionally on-device: operational data uses browser storage, generated PDF files use IndexedDB, and JSON backup/restore includes the structured program and irrigation data. Use the app and backups on the same iPad until a later controlled phase adds authentication, cloud sync, permissions, and multi-device conflict handling.
+
+## Deployment
+
+GitHub Pages serves the root `index.html` from the `main` branch.
