@@ -6,11 +6,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Fert CVCS">
+<meta name="apple-mobile-web-app-title" content="CVCS Turf">
 <meta name="theme-color" content="#FFFBEF">
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="manifest" href="manifest.json">
-<title>CVCS Fertilizer Platinum v4.0</title>
+<title>CVCS Turf + Irrigation Platinum v4.1</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <style>
@@ -315,6 +315,46 @@
 .v4-score{font-size:32px;font-weight:900;color:var(--orange)}.v4-badge{font-size:10px;font-weight:900;padding:4px 8px;border-radius:7px;background:#eef1f6}
 @media(max-width:680px){.v4-kpis{grid-template-columns:repeat(2,1fr)}.v4-grid{grid-template-columns:1fr}.v4-acct{padding:12px}}
 
+/* v4.1 EASY MODE — iPad-first, high-contrast, glove-friendly controls */
+body{font-size:17px}.hwrap,main{max-width:1480px}.hrow{min-height:82px}.htitle{font-size:20px}.hsub{font-size:12px}
+.easy-nav{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;padding:14px 0 16px}
+.easy-nav button{min-height:72px;border:2px solid rgba(255,255,255,.18);border-radius:18px;background:#303b4e;color:#fff;font-size:16px;font-weight:950;letter-spacing:.01em;padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 5px 12px rgba(0,0,0,.15)}
+.easy-nav button .navicon{font-size:25px;line-height:1}.easy-nav button.on{background:var(--orange);border-color:#ffb27b;transform:translateY(-2px)}
+.mstrip{gap:8px;padding:12px max(18px,calc((100vw - 1480px)/2));overflow-x:auto}.mpill{min-width:64px;min-height:48px;font-size:14px;border-radius:14px}
+.btn,.estbtn,.ybtn{min-height:48px;font-size:14px;border-radius:13px;padding:11px 18px}.search,.fi{min-height:52px;font-size:17px;border-radius:14px}.yrsw{min-height:48px}.ybtn{min-width:48px}.yval{font-size:16px}
+.sechead{font-size:25px}.rsub{font-size:14px;line-height:1.5}.secrow{gap:12px;align-items:center}
+.v4-kpis{gap:12px;margin:16px 0 20px}.v4-kpi{border-radius:19px;padding:20px;min-height:104px}.v4-kpi b{font-size:36px}.v4-kpi span{font-size:12px;line-height:1.35}
+.v4-toolbar{gap:12px;margin-bottom:16px}.v4-toolbar .search{flex:1;min-width:260px;padding:13px 16px}
+.v4-tabs{gap:9px;padding:2px 0 8px;margin-bottom:16px}.v4-filter{min-height:50px;padding:11px 17px;border-radius:14px;font-size:13px;white-space:nowrap}
+.v4-grid{grid-template-columns:repeat(2,minmax(360px,1fr));gap:15px}.v4-acct{border-left-width:11px;border-radius:21px;padding:20px;min-height:190px;box-shadow:0 5px 16px rgba(32,41,56,.09)}
+.v4-acct.mcd{border-left-color:#e32219}.v4-acct.apartment{border-left-color:#2563eb}.v4-acct.recovery{border-left-color:#dc2626}.v4-acct.shrub{border-left-color:#db2777}
+.v4-name{font-size:20px;line-height:1.25}.v4-state{font-size:12px;padding:7px 11px;border-radius:10px}.v4-state.good{background:#dcefDC;color:#225c28}.v4-state.orange{background:#ffead2;color:#8a3f08}
+.v4-next{font-size:16px;line-height:1.4;margin-top:14px;padding:11px 13px;border-radius:12px;background:#fff8ec}.v4-meta{font-size:13px;line-height:1.45;margin-top:9px}.v4-chips{gap:7px;margin-top:12px}.v4-chip{min-height:36px;font-size:12px;padding:7px 10px;border-radius:10px}
+.v4-profile{border-radius:20px;padding:20px}.v4-title{font-size:25px}.v4-section{margin-top:20px;padding-top:17px}.v4-section h3{font-size:15px;margin-bottom:12px}.v4-program{min-height:52px;padding:12px;font-size:14px}.v4-actions .btn{flex:1;min-width:180px}
+.easy-callout{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1f6b3a,#2f8d4e);color:#fff;border-radius:21px;padding:18px 20px;margin:14px 0 18px;box-shadow:0 7px 18px rgba(31,107,58,.2)}
+.easy-callout .call-icon{font-size:34px}.easy-callout b{font-size:19px;display:block}.easy-callout span{font-size:13px;opacity:.93;line-height:1.45}.easy-callout .btn{margin-left:auto;background:#fff;color:#225c28;white-space:nowrap}
+.easy-legend{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 16px}.easy-legend span{font-size:12px;font-weight:900;padding:8px 11px;border-radius:10px}.lg-good{background:#dcefDC;color:#225c28}.lg-blue{background:#dfe9f8;color:#24407a}.lg-watch{background:#fff3c4;color:#6e5a13}.lg-red{background:#fbdad5;color:#9e2b18}
+.program-lead{background:linear-gradient(135deg,#202938,#36445d);color:#fff;border-radius:22px;padding:22px;margin-bottom:20px}.program-lead h2{font-size:25px;margin:0 0 7px}.program-lead p{margin:0;color:#e5e9f0;line-height:1.5}
+.program-heading{font-size:21px;font-weight:950;color:var(--navy);margin:24px 0 7px}.program-sub{font-size:14px;color:var(--muted);margin-bottom:13px;line-height:1.5}
+.program-grid{display:grid;grid-template-columns:repeat(3,minmax(240px,1fr));gap:15px}.program-card{position:relative;text-align:left;background:#fff;border:2px solid var(--line);border-top:12px solid #64748b;border-radius:22px;padding:20px;min-height:245px;box-shadow:0 5px 15px rgba(32,41,56,.08)}
+.program-card.gold{border-top-color:#d4a72c}.program-card.silver{border-top-color:#9ca3af}.program-card.bronze{border-top-color:#a16207}.program-card.mcd{border-top-color:#e32219}.program-card.apartment{border-top-color:#2563eb}.program-card.shrub{border-top-color:#db2777}.program-card.recovery{border-top-color:#dc2626}.program-card.product{border-top-color:#7c3aed}.program-card.problem{border-top-color:#ea580c}
+.program-icon{font-size:36px}.program-name{font-size:21px;font-weight:950;color:var(--navy);margin:7px 0}.program-cadence{display:inline-block;font-size:12px;font-weight:950;background:#eef1f6;padding:6px 9px;border-radius:9px;margin-bottom:9px}.program-card p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 14px}.program-card .openlabel{position:absolute;bottom:17px;left:20px;color:var(--orange);font-size:14px;font-weight:950}
+.program-months{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.program-month{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfaf7;min-height:104px}.program-month.now{border:3px solid var(--orange);background:#fff7ed}.program-month b{display:block;color:var(--navy);font-size:14px;margin-bottom:5px}.program-month span{font-size:12px;line-height:1.4;color:var(--muted)}
+.program-safety{background:#fff3c4;color:#57470d;border-radius:14px;padding:13px 15px;font-size:13px;line-height:1.5;margin:12px 0}.program-details{font-size:15px;line-height:1.55}.program-details li{margin:8px 0}
+.more-grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:14px}.more-btn{min-height:135px;background:#fff;border:2px solid var(--line);border-radius:21px;padding:18px;text-align:left;box-shadow:0 5px 14px rgba(32,41,56,.07)}.more-btn .more-icon{font-size:32px}.more-btn b{display:block;font-size:18px;color:var(--navy);margin:7px 0 4px}.more-btn span{font-size:13px;color:var(--muted);line-height:1.4}
+.report-grid{display:grid;grid-template-columns:repeat(3,minmax(230px,1fr));gap:14px;margin:15px 0}.report-card{background:#fff;border:2px solid var(--line);border-radius:21px;padding:19px;text-align:left;min-height:190px;box-shadow:0 5px 14px rgba(32,41,56,.07)}.report-card .report-icon{font-size:34px}.report-card b{display:block;font-size:19px;color:var(--navy);margin:8px 0 5px}.report-card p{font-size:13px;color:var(--muted);line-height:1.45;margin:0 0 13px}.report-card .btn{width:100%}.report-history{border:1px solid var(--line);border-radius:16px;overflow:hidden}.report-row{display:flex;gap:10px;align-items:center;padding:13px;border-bottom:1px solid var(--line-lt);background:#fff}.report-row:last-child{border-bottom:0}.report-row>span{font-size:22px}.report-row>div{flex:1}.report-row b{display:block;color:var(--navy);font-size:14px}.report-row small{font-size:11px;color:var(--muted)}
+.walk-question{background:#fbfaf7;border:2px solid var(--line);border-radius:17px;padding:14px;margin:10px 0}.walk-question>span{font-size:15px;font-weight:900;color:var(--navy);display:block;margin-bottom:10px}.walk-choices{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.walk-choice{min-height:48px;border-radius:11px;background:#e7e5df;font-size:12px;font-weight:950;padding:7px}.walk-choice.good.on{background:#3f7a3f;color:#fff}.walk-choice.watch.on{background:#e3b015;color:#302500}.walk-choice.bad.on{background:#b3402a;color:#fff}.walk-choice.na.on{background:#64748b;color:#fff}
+.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:10px;align-items:start;border-bottom:1px solid var(--line-lt);padding:10px 0}.timeline-row b{font-size:13px;color:var(--navy)}.timeline-row span{font-size:13px;line-height:1.45;color:var(--muted)}.timeline-row.now{background:#fff7ed;border-radius:10px;padding:10px}
+.tracker-card{border:2px solid var(--line);border-left:11px solid #7c3aed;border-radius:19px;padding:16px;margin:12px 0;background:#fff;box-shadow:0 4px 12px rgba(32,41,56,.07)}.tracker-card.gold{border-left-color:#d4a72c}.tracker-card.blue{border-left-color:#2563eb}.tracker-card.orange{border-left-color:#ea580c}.tracker-card.red{border-left-color:#b3402a}.tracker-card.green{border-left-color:#3f7a3f}
+.tracker-head{display:flex;gap:10px;align-items:flex-start}.tracker-head>div{flex:1}.tracker-head b{display:block;font-size:17px;color:var(--navy)}.tracker-head span{font-size:12px;color:var(--muted)}.tracker-pct{font-size:20px;font-weight:950;color:var(--orange)}
+.tracker-bar{height:12px;border-radius:10px;background:#e7e5df;overflow:hidden;margin:11px 0}.tracker-fill{height:100%;background:linear-gradient(90deg,#2f8d4e,#6bbf78);border-radius:10px}
+.tracker-step{display:grid;grid-template-columns:46px 95px 1fr;gap:9px;align-items:start;padding:11px 0;border-top:1px solid var(--line-lt)}.tracker-step button{width:42px;height:42px;border-radius:12px;background:#e7e5df;font-size:21px}.tracker-step.done button{background:#3f7a3f;color:#fff}.tracker-step.overdue{background:#fff1ef;border-radius:11px;padding:11px 7px}.tracker-date{font-size:11px;font-weight:950;color:var(--muted);padding-top:7px}.tracker-task{font-size:13px;line-height:1.45;color:var(--ink)}.tracker-task b{display:block;color:var(--navy);margin-bottom:2px}.start-programs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.start-program{min-height:58px;border:2px dashed #c7c4ba;border-radius:13px;background:#fbfaf7;padding:9px;text-align:left;font-size:12px;font-weight:900;color:var(--navy)}
+.irr-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}.irr-stat{background:#e9f2fb;border-radius:13px;padding:12px}.irr-stat b{display:block;font-size:22px;color:#22578d}.irr-stat span{font-size:11px;font-weight:900;color:#4b6680}
+.timer-card{border:2px solid #b9d4ec;border-radius:19px;background:#f6fbff;padding:16px;margin:12px 0}.timer-head{display:flex;gap:10px;align-items:center}.timer-head>div{flex:1}.timer-head b{display:block;font-size:18px;color:#1e4d75}.timer-head span{font-size:12px;color:#5b7185}.station-grid{display:grid;grid-template-columns:64px 1.3fr 1fr 1fr;gap:7px;margin-top:10px;align-items:center}.station-grid .fi{min-height:46px;font-size:14px;padding:8px}.station-grid .station-head{font-size:10px;font-weight:950;text-transform:uppercase;color:#5b7185}.irr-program{border-radius:14px;background:#fff;border:1px solid #c9dceb;padding:12px;margin-top:10px}.irr-program b{display:block;color:#1e4d75;margin-bottom:4px}.irr-program span{font-size:12px;line-height:1.45;color:#5b7185}
+.modal{width:min(920px,calc(100vw - 24px));max-height:94vh}.mhead{font-size:18px;min-height:58px}.mbody{padding:20px}.mfoot{min-height:66px;padding:10px 20px}.xbtn{min-width:48px;min-height:48px;font-size:20px}
+@media(max-width:980px){.easy-nav{grid-template-columns:repeat(3,1fr)}.program-grid,.more-grid,.report-grid{grid-template-columns:repeat(2,1fr)}.program-months{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.hrow{flex-wrap:wrap}.hsub{line-height:1.4}.easy-nav{grid-template-columns:repeat(3,1fr);gap:7px}.easy-nav button{min-width:0;min-height:64px;font-size:13px;border-radius:15px}.easy-nav button .navicon{font-size:21px}.v4-grid,.program-grid,.more-grid,.report-grid,.program-months{grid-template-columns:1fr}.v4-acct{min-height:0;padding:17px}.v4-name{font-size:18px}.v4-kpis{grid-template-columns:repeat(2,1fr)}.v4-kpi{padding:15px;min-height:92px}.v4-kpi b{font-size:30px}.easy-callout{align-items:flex-start;flex-wrap:wrap}.easy-callout .btn{width:100%;margin-left:0}.walk-choices{grid-template-columns:repeat(2,1fr)}.frow{flex-direction:column}.secrow{align-items:flex-start;flex-direction:column}.secrow>.btn{width:100%}.estbtn{width:100%}.tracker-step{grid-template-columns:46px 1fr}.tracker-date{grid-column:2;padding-top:0}.tracker-task{grid-column:2}.start-programs,.irr-summary{grid-template-columns:1fr}.station-grid{grid-template-columns:54px 1fr}.station-grid .station-head:nth-child(n+3){display:none}}
+
 </style>
 </head>
 <body>
@@ -332,7 +372,7 @@ const ORANGE=[232,96,16], NAVY=[32,41,56];
 
 /* ═══════════ STATE ═══════════ */
 let S=null;                                   // {baselines,logs,purchases,assignments}
-let tab="dash", month=MONTHS[new Date().getMonth()], year=new Date().getFullYear();
+let tab="command", month=MONTHS[new Date().getMonth()], year=new Date().getFullYear();
 let expanded=null, search="", confirmReset=false, saveState="";
 let editing=null, confirmDel=false, editingProd=null, libTab="products";
 let lang="en", showSteps=false, histTab="history", openSteps=null, openDiag=null, diagSearch="", treeSearch="";
@@ -382,8 +422,9 @@ function planFor(m){
   const rows=[];
   const key=year+"-"+m, mods=S.monthMods[key]||{};
   for(const a of ACC()){
-    let g=a.lawn>0?(DATA.grassCal[a.tier]||{})[m]:null;
-    let b=a.bed>0?(DATA.bedCal[a.tier]||{})[m]:null;
+    const cal=v4CalendarFor(a);
+    let g=a.lawn>0?(cal.grass||{})[m]:null;
+    let b=a.bed>0?(cal.bed||{})[m]:null;
     const t=a.trees?DATA.treeCal[m]:null;
     const mod=mods[a.id];
     if(mod){ if(g&&mod.lawn) g=mod.lawn; if(b&&mod.bed) b=mod.bed; }
@@ -406,8 +447,9 @@ function monthTotals(m){
   const key=year+"-"+m, mods=S.monthMods[key]||{};
   for(const a of ACC()){
     const w=working(a.id);
-    let g=a.lawn>0?(DATA.grassCal[a.tier]||{})[m]:null;
-    let b=a.bed>0?(DATA.bedCal[a.tier]||{})[m]:null;
+    const cal=v4CalendarFor(a);
+    let g=a.lawn>0?(cal.grass||{})[m]:null;
+    let b=a.bed>0?(cal.bed||{})[m]:null;
     const mod=mods[a.id];
     if(mod){ if(g&&mod.lawn) g=mod.lawn; if(b&&mod.bed) b=mod.bed; }
     if(g){const log=S.logs[key+"-"+a.id+"-lawn"]; t[g]=(t[g]||0)+(log&&log.done?log.actual:w.lawn);}
@@ -529,7 +571,7 @@ function restore(){
     try{
       const txt=await e.target.files[0].text(); const d=JSON.parse(txt);
       if(!d||typeof d!=="object") throw 0;
-      S={baselines:d.baselines||{},logs:d.logs||{},purchases:d.purchases||[],assignments:d.assignments||{},custom:d.custom||[],edits:d.edits||{},prodEdits:d.prodEdits||{},prodCustom:d.prodCustom||[],docs:d.docs||[],monthMods:d.monthMods||{},bids:d.bids||[],svcEdits:d.svcEdits||{},programs:d.programs||{},acctNotes:d.acctNotes||{},customProgs:d.customProgs||{},svcCustom:d.svcCustom||{},lighting:d.lighting||{},aerseed:d.aerseed||{},abateMeta:d.abateMeta||{},diagCustom:d.diagCustom||[],treeCustom:d.treeCustom||[],labor:d.labor||{},rate:d.rate||75};
+      S={baselines:d.baselines||{},logs:d.logs||{},purchases:d.purchases||[],assignments:d.assignments||{},custom:d.custom||[],edits:d.edits||{},prodEdits:d.prodEdits||{},prodCustom:d.prodCustom||[],docs:d.docs||[],monthMods:d.monthMods||{},bids:d.bids||[],svcEdits:d.svcEdits||{},programs:d.programs||{},acctNotes:d.acctNotes||{},customProgs:d.customProgs||{},svcCustom:d.svcCustom||{},lighting:d.lighting||{},aerseed:d.aerseed||{},abateMeta:d.abateMeta||{},diagCustom:d.diagCustom||[],treeCustom:d.treeCustom||[],labor:d.labor||{},rate:d.rate||75,v4:d.v4||null};
       await save(); alert("Backup restored.");
     }catch(err){alert("That file didn't look like a CVCS backup.");}
   };
@@ -777,15 +819,15 @@ function render(){
   /* header */
   const nowYr=new Date().getFullYear();
   h+='<header><div class="hwrap"><div class="hrow"><div class="logo">F</div><div>'+
-     '<div class="htitle">CVCS FERTILIZER <span style="color:var(--orange)">PLATINUM</span> <span style="font-size:10px;color:var(--gold);letter-spacing:.06em">v4.0</span></div>'+
+     '<div class="htitle">CVCS TURF + IRRIGATION <span style="color:var(--orange)">PLATINUM</span> <span style="font-size:10px;color:var(--gold);letter-spacing:.06em">v4.1</span></div>'+
      '<div class="hsub">Central Valley Commercial Services · '+ACC().length+' ACCOUNTS · '+month.toUpperCase()+' '+year+'</div></div>'+
      '<div class="save'+(saveState==="err"?" err":"")+'">'+(saveState==="saved"?"Saved ✓":saveState==="err"?"Save failed":"")+'</div>'+
      '<span class="yrsw"><button class="ybtn" onclick="if(year>2024){year--;render()}">‹</button>'+
      '<span class="yval tabnum">'+year+'</span>'+
      '<button class="ybtn" onclick="if(year<2040){year++;render()}">›</button></span>'+
      '<button class="estbtn" onclick="newBid();render()">+ Estimate</button></div>'+
-     '<div class="tabs">'+[["command","Command"],["dash","Home"],["master","Master"],["schedule","Schedule"],["order","Order"],["juan","Juan"],["aerseed","Aerate+Seed"],["lights","Lights"],["abate","Abatement"],["bids","Bids"],["programs","Programs"],["hub","Hub"],["accounts","Accounts"],["library","Library"],["history","History"]]
-       .map(([k,l])=>'<button class="tab'+(tab===k?" on":"")+'" onclick="setTab(\''+k+'\')">'+l+"</button>").join("")+
+     '<div class="easy-nav">'+[["command","🏡","Properties"],["tierhub","🧩","Programs"],["workweek","📅","Work Week"],["products","🧰","Products"],["reporthub","📊","Reports"],["more","•••","More"]]
+       .map(([k,i,l])=>'<button class="'+((k==="products"?tab==="library":tab===k)?"on":"")+'" onclick="easyGo(\''+k+'\')"><span class="navicon">'+i+'</span><span>'+l+'</span></button>').join("")+
      "</div></div></header>";
 
   /* month strip */
@@ -795,6 +837,10 @@ function render(){
   h+="<main>";
 
   if(tab==="command") h+=v4CommandHTML();
+  if(tab==="tierhub") h+=tierProgramsHTML();
+  if(tab==="workweek") h+=v4WorkWeekHTML();
+  if(tab==="reporthub") h+=v4ReportsHTML();
+  if(tab==="more") h+=easyMoreHTML();
 
 
   /* ── DASHBOARD ── */
@@ -1899,90 +1945,489 @@ function render(){
   h+=treeEditorHTML();
   h+=v4ProfileHTML();
   h+=v4WalkHTML();
+  h+=programDetailHTML();
+  h+=irrigationHTML();
   document.getElementById("app").innerHTML=h;
 }
 
 
 
-/* ═══════════ V4 ACCOUNT COMMAND + WALK-THROUGH ═══════════ */
-let v4Search="",v4Filter="all",v4Acct=null,v4Walk=null;
+/* ═══════════ V4.1 EASY COMMAND CENTER + CONNECTED PROGRAMS ═══════════ */
+let v4Search="",v4Filter="all",v4Acct=null,v4Walk=null,programOpen=null,irrigationAcct=null,reportAccount=null;
+
+/* Tier assignments imported from the CVCS Tier Master workbook. */
+const CVCS_TIER_MAP={"A-MON-3":"2","A-MON-4":"2","A-MON-5":"2","A-MON-7":"2","A-TUE-1":"2","A-TUE-2":"2","A-TUE-3":"2","A-TUE-4":"3","A-TUE-5":"2","A-TUE-6":"1","A-WED-1":"1","A-WED-2":"1","A-WED-3":"2","A-WED-4":"3","A-THU-1":"3","A-THU-2":"3","A-THU-4":"2","A-FRI-1":"3","A-FRI-3":"3","A-FRI-4":"3","A-FRI-6":"3","A-FRI-7":"3","A-FRI-8":"3","A-FRI-9":"2","B-TUE-5":"3","B-WED-3":"3","B-WED-5":"3","B-WED-6":"3","B-WED-7":"3","B-WED-8":"3","B-THU-2":"2","B-THU-4":"3","B-THU-5":"3","B-THU-6":"3","B-THU-8":"2","B-THU-9":"2","B-FRI-1":"3","B-FRI-2":"3","B-FRI-3":"3","B-FRI-4":"3","B-FRI-5":"3","B-FRI-6":"3","C-MON-1":"1","C-MON-2":"2","C-MON-3":"3","C-MON-4":"2","C-MON-5":"2","C-MON-6":"2","C-MON-7":"2","C-MON-8":"1","C-TUE-1":"2","C-TUE-2":"3","C-TUE-3":"1","C-TUE-4":"2","C-TUE-5":"1","C-WED-1":"3","C-WED-2":"3","C-WED-3":"1","C-WED-4":"3","C-WED-5":"3","C-WED-6":"3","C-THU-1":"3","C-THU-2":"3","C-THU-3":"3","C-THU-4":"3","C-THU-8":"3","C-THU-9":"3","C-FRI-1":"3","C-FRI-2":"3","C-FRI-3":"3","C-FRI-6":"3","D-MON-1":"1","D-MON-2":"1","D-MON-3":"2","D-MON-4":"2","D-MON-5":"3","D-TUE-1":"2","D-TUE-3":"2","D-TUE-4":"2","D-TUE-6":"2","D-TUE-7":"3","D-TUE-8":"3","D-TUE-9":"3","D-TUE-10":"3","D-TUE-11":"3","D-WED-4":"3","D-WED-5":"3","D-THU-3":"3","D-FRI-1":"3","D-FRI-2":"2","D-FRI-3":"3","D-FRI-4":"2","D-FRI-5":"2","D-FRI-6":"1"};
+
+const CVCS_TIERS={
+  gold:{name:"Gold",icon:"🏆",cls:"gold",cadence:"High-touch · 6 treatment windows",short:"Flagship and recovery accounts. Crew checks every service; owner or qualified tech reviews twice monthly.",checks:"Every service: 5–7 minute turf walk, wet/dry test and 3 fixed photos. Full irrigation review monthly.",nutrition:"Every 4 weeks during active growth only when turf condition, measurements and the product label support it."},
+  silver:{name:"Silver",icon:"🥈",cls:"silver",cadence:"Core care · 4 treatment windows",short:"High-visibility and watch-list accounts. Monthly condition review with four planned nutrition windows.",checks:"Crew looks every service and saves one condition photo monthly. Owner or qualified tech reviews monthly.",nutrition:"Four seasonal nutrition windows, adjusted for turf response, weather, irrigation and label directions."},
+  bronze:{name:"Bronze",icon:"🥉",cls:"bronze",cadence:"Simple care · 2 treatment windows",short:"Stable, routine and smaller accounts. Two core applications with problem work quoted separately.",checks:"Crew reports exceptions every service. Manager reviews quarterly or when the crew flags a problem.",nutrition:"Two core nutrition windows. A third application is added only when approved and site condition supports it."}
+};
+const CVCS_SITES={
+  standard:{name:"Standard Property",icon:"🏡",cls:"gold",cadence:"Uses the selected Gold, Silver or Bronze tier",short:"General home, church or commercial landscape plan."},
+  mcd:{name:"McDonald’s",icon:"🍟",cls:"mcd",cadence:"4 coordinated turf + bed visits per year",short:"Restaurant-focused plan for curb appeal, crack weeds, irrigation and clean entrances."},
+  apartment:{name:"Apartment Complex",icon:"🏢",cls:"apartment",cadence:"4 turf + shrub visits per year",short:"Common-area plan for grass, high-traffic irrigation, shrubs, roses and resident safety."},
+  shrub:{name:"Shrub-Heavy Property",icon:"🌹",cls:"shrub",cadence:"Selected tier + 4 shrub/bed windows",short:"For properties with roses, flowers, hedges and little or moderate turf."},
+  recovery:{name:"Recovery / Problem Site",icon:"🚑",cls:"recovery",cadence:"90-day recovery + weekly checks",short:"For thin turf, irrigation failures, severe weeds, compaction or confirmed disease."}
+};
+
 const V4_PROGRAMS=[
-  ["fert","🌿 Fertilizer"],["weed","🧪 Weed"],["fungus","🍄 Fungus"],["seed","🌱 Seed"],
+  ["fert","🌿 Fertilizer"],["weed","🧪 Weed Response"],["fungus","🍄 Fungus Response"],["seed","🌱 Seed"],
   ["aerate","🕳️ Aeration"],["dethatch","🧹 Dethatch"],["irrigation","💧 Irrigation"],
-  ["trees","🌳 Trees"],["shrubs","🌹 Shrubs"],["insects","🐛 Insects"],["abate","🚜 Abatement"]
+  ["trees","🌳 Trees"],["shrubs","🌹 Shrubs & Roses"],["insects","🐛 Insects"],["crape","🌸 Crape Myrtle"],
+  ["olive","🫒 Fruitless Olive"],["brandt","💧 Brandt Liquid Pilot"],["qualipro","🧰 Quali-Pro Route"],
+  ["granular","🟤 Granular-Only"],["abate","🚜 Abatement"]
 ];
+const V4_MODULE_DETAILS={
+  fert:{name:"Fertilizer Core",icon:"🌿",cls:"product",cadence:"Tier calendar",short:"Seasonal turf and bed nutrition tied to the account’s care tier.",steps:["Confirm irrigated square footage and turf type.","Check soil moisture, heat stress and current color before applying.","Use the scheduled product only after checking the current container label and site restrictions.","Record product, amount, lot when available, applicator, weather, irrigation and photos."]},
+  weed:{name:"Weed Response",icon:"🧪",cls:"problem",cadence:"Light · Moderate · Severe",short:"Identify the weed and choose the response level instead of spraying everything the same way.",steps:["LIGHT: spot weeds, photograph and recheck next service.","MODERATE: map hot spots, correct mowing/irrigation and use a label-matched treatment if needed.","SEVERE: owner or qualified applicator diagnosis, property-wide plan, follow-up at 7 and 14 days.","After a pre-emergent failure, identify the weed, verify timing/water-in and record the corrective action."]},
+  fungus:{name:"Fungus / Disease Response",icon:"🍄",cls:"problem",cadence:"Diagnosis first · 48–72 hour recheck",short:"For suspected disease. Irrigation and cultural causes are checked before a fungicide decision.",steps:["Photograph the pattern and individual blades; check roots, soil moisture and irrigation timing.","Rule out drought, fertilizer burn, insects, urine, compaction and mower damage.","Only a qualified person selects a California-registered product for the diagnosed target.","Record active ingredient and FRAC group; rotate modes of action when repeat applications are label-permitted.","Recheck in 48–72 hours and again at 7 days. Do not make an automatic third fungicide application."]},
+  seed:{name:"Overseed / New Seed",icon:"🌱",cls:"product",cadence:"Best window Sep–Oct",short:"Cool-season tall fescue repair and establishment plan.",steps:["Fix irrigation coverage and herbicide conflicts first.","Routine overseed planning range: 5–7 lb per 1,000 sq ft; recovery: 6–8 lb. Verify seed label and contract.","Core aerate where compacted, seed in two directions, ensure soil contact, then set light establishment watering.","Photograph day 0, day 7, day 14 and day 28; protect seedlings from traffic and incompatible herbicides."]},
+  aerate:{name:"Core Aeration",icon:"🕳️",cls:"product",cadence:"When actively growing and compacted",short:"Relieves measured compaction and supports roots and seed establishment.",steps:["Probe soil and confirm compaction; mark heads, valves and utilities.","Do not aerate saturated, dormant or heat-stressed turf.","Check all pre-emergent and seed timing conflicts before disturbing soil.","Use two passes where specified and leave clean, safe hardscape."]},
+  dethatch:{name:"Dethatching",icon:"🧹",cls:"problem",cadence:"Only when thatch is over 1/2 inch",short:"Not a default fix for thin grass; use only after measuring the thatch layer.",steps:["Cut a turf plug and measure the spongy thatch layer.","Do not dethatch cool-season turf during summer heat or severe stress.","Confirm irrigation and recovery plan before work.","Collect debris, document depth and schedule recovery follow-up."]},
+  irrigation:{name:"Irrigation Check",icon:"💧",cls:"product",cadence:"Monthly Gold · 6–8 weeks Silver",short:"Coverage, runtime, leaks, runoff, root-zone moisture and controller review.",steps:["Run every station manually and photograph failures.","Check heads, nozzles, drip, valves, pressure, overspray, runoff and pooling.","Use catch cans in spring/fall or when coverage is uncertain.","Correct irrigation before blaming fertilizer, seed or disease treatment."]},
+  trees:{name:"Tree Care",icon:"🌳",cls:"product",cadence:"Seasonal inspection + targeted work",short:"Canopy, trunk, roots, clearance, irrigation, pests and structural concerns.",steps:["Identify the tree and photograph canopy, trunk flare and any symptom.","Keep irrigation off the trunk and check deep root-zone moisture.","Flag structural hazards and protected-tree work for qualified review.","Use pest products only for a confirmed target and label-approved site."]},
+  shrubs:{name:"Shrubs, Roses & Flowers",icon:"🌹",cls:"product",cadence:"4 seasonal bed windows",short:"Nutrition, drip, pruning timing, pests and appearance for ornamental-heavy sites.",steps:["Check drip emitters and root-zone moisture before feeding.","Inspect new growth and leaf undersides for aphids, scale, mites and disease.","Match fertilizer and treatment to plant species and current label.","Record flowering stage so applications do not conflict with pollinators."]},
+  insects:{name:"Insect Response",icon:"🐛",cls:"problem",cadence:"Identify first",short:"Aphids, scale, mites, grubs, webworms and other verified pests.",steps:["Identify pest and life stage; photograph evidence and damage.","Use thresholds and cultural correction before treatment.","Protect pollinators and follow bloom, drift and re-entry restrictions.","Log every pesticide application for the monthly use report."]},
+  crape:{name:"Crape Myrtle Aphid Plan",icon:"🌸",cls:"problem",cadence:"Scout spring + follow-up",short:"Two-check seasonal plan for sticky honeydew, ants, curled leaves and sooty mold.",steps:["Scout before bloom and identify aphids or scale; do not treat on assumption.","Correct ant activity and irrigation stress.","If treatment is needed, a qualified applicator selects a label-approved option with pollinator timing in mind.","Recheck 7–14 days and record honeydew/leaf response."]},
+  olive:{name:"Fruitless Olive Plan",icon:"🫒",cls:"problem",cadence:"Bloom and summer inspection",short:"Insect scouting, scale management, sucker control and optional fruit-suppression planning.",steps:["Confirm olive variety and whether the problem is insects, fruit or suckers.","Inspect for scale and sooty mold; correct stress and ant activity.","Fruit-suppression sprays are timing-sensitive, label-controlled and pesticide-reportable; use qualified application only.","Prune/sucker work and any spray are separate documented services."]},
+  brandt:{name:"Brandt Liquid Pilot",icon:"💧",cls:"product",cadence:"One controlled test account",short:"Side-by-side liquid nutrition trial before expanding beyond granular programs.",steps:["Choose one measured, representative account and leave a comparison area when practical.","Candidate products from the field-day workbook: Converge SRN, Manni-Plex Ultra Turf, 20-K and Smart Fe — select only what the site needs.","Use only the current label rate and verified tank compatibility; do not combine products just to make a one-jug solution.","Record mix, treated area, weather and photos on day 0, 7, 14 and 28; compare color, density, growth and labor cost."]},
+  qualipro:{name:"Quali-Pro Product Route",icon:"🧰",cls:"product",cadence:"Target-specific, label-matched products",short:"Quali-Pro is a product family, not one product that safely handles every fertilizer, weed, insect and disease need.",steps:["Identify the exact target and treatment site.","Choose the active ingredient and formulation only after verifying the current California registration and container label.","Check PPE, rate, interval, irrigation, seeding and mode-of-action restrictions.","Save the label/SDS link and record the application for compliance."]},
+  granular:{name:"Granular-Only Plan",icon:"🟤",cls:"product",cadence:"Simple crew workflow",short:"Seasonal granular nutrition with separate diagnosis-based problem treatments.",steps:["Use the tier calendar for core fertilizer windows.","Calibrate the spreader, measure area and sweep all hardscape.","Water in only as the specific label requires.","Do not promise one granular product will solve fungus, insects, weeds and fertility together."]},
+  abate:{name:"Lot Abatement / Mechanical Weeding",icon:"🚜",cls:"problem",cadence:"Scope and price per site",short:"Walk, measure, price, schedule and photo-document mowing, disking or mechanical weed removal.",steps:["Measure acreage, slope, access, fuel load, obstacles and haul-off.","Choose mowing, disking, hand/mechanical work or a combination.","Price mobilization, labor, equipment, disposal and fire-safety requirements separately.","Capture before/after photos and county/city deadline information."]}
+};
 const V4_WALK=[
- ["overall","Overall appearance acceptable"],["color","Turf color healthy"],["density","Turf density acceptable"],
- ["weeds","No significant weeds"],["disease","No fungus or disease symptoms"],["water","No dry, soggy, runoff, or pooling areas"],
- ["controller","Irrigation controller and schedule checked"],["heads","Heads, valves, drip, and coverage checked"],
- ["trees","Tree leaves, canopy, trunk, roots, insects, and clearance checked"],["shrubs","Shrubs, roses, flowers, pests, and drip checked"],
- ["soil","Soil condition reviewed; pH recorded only if tested"],["safety","Hardscape, trip hazards, debris, and safety checked"]
+ ["overall","How does the whole property look?"],["color","Is the turf color healthy?"],["density","Is the turf thick enough?"],
+ ["weeds","How are the weeds?"],["disease","Any fungus or disease signs?"],["water","Any dry, soggy, runoff or pooling areas?"],
+ ["controller","Was the irrigation controller checked?"],["heads","Were heads, valves, drip and coverage checked?"],
+ ["trees","How do the trees, leaves, trunks and roots look?"],["shrubs","How do shrubs, roses and flowers look?"],
+ ["soil","Was soil condition checked?"],["safety","Any trip hazards, debris or safety problems?"]
 ];
+const CVCS_MONTH_FOCUS={
+  January:"Build the annual account plan. Review soil, irrigation and last year’s results; avoid unnecessary nitrogen.",
+  February:"Crabgrass prevention window. Use pre-emergent only where no conflicting spring seed work is planned.",
+  March:"Start irrigation checks. Apply the first nutrition window where the turf is active and the label/site support it.",
+  April:"Run coverage and compaction checks. Aerate only active, compacted turf with no treatment conflict.",
+  May:"Disease season begins. Scout moisture and leaf symptoms before feeding or treating; complete the next nutrition window.",
+  June:"Prepare for heat. Correct irrigation, wilt and runoff; use measured, restrained nutrition where needed.",
+  July:"Protect turf from heat stress. Avoid aggressive dethatching and unnecessary nitrogen; check wilt and hot edges.",
+  August:"Measure thin areas, inspect irrigation and prepare fall aeration/seed proposals and product orders.",
+  September:"Audit irrigation, map thin/problem areas and begin the prime cool-season aeration and seed window.",
+  October:"Complete approved aeration/overseed work. Adjust irrigation for establishment and cooler weather.",
+  November:"Reduce irrigation and make the fall nutrition visit where scheduled after seedlings are established.",
+  December:"Set winter controllers, inspect drainage and root zones, and document year-end condition."
+};
+const CVCS_CALENDARS={
+  gold:{grass:{February:"DIM",April:"SG",June:"CONV",August:"PROD",October:"SG",December:"WINTER"},bed:{February:"TI",April:"TEN",August:"TEN",October:"TI"}},
+  silver:{grass:{February:"DIM",May:"SURGE",August:"PROD",November:"WINTER"},bed:{February:"TI",April:"TEN",August:"TEN",October:"TI"}},
+  bronze:{grass:{February:"DIM",October:"WINTER"},bed:{May:"TEN",October:"TI"}},
+  mcd:{grass:{February:"DIM",May:"SURGE",August:"PROD",November:"WINTER"},bed:{February:"TI",May:"TEN",August:"TEN",November:"TI"}},
+  apartment:{grass:{February:"DIM",May:"SURGE",August:"PROD",November:"WINTER"},bed:{February:"TI",April:"TEN",August:"TEN",October:"TI"}},
+  recovery:{grass:{February:"DIM",April:"SG",June:"CONV",August:"PROD",October:"SG",December:"WINTER"},bed:{February:"TI",April:"TEN",August:"TEN",October:"TI"}}
+};
+const V4_WORKFLOWS={
+  fert:{name:"Fertilizer Application",icon:"🌿",color:"green",steps:[
+    [0,"OWNER / LEAD","Confirm turf type, measured area, condition and this month’s program product."],
+    [0,"IRRIGATION","Run affected stations; fix dry spots, leaks, runoff or saturation before applying."],
+    [0,"APPLICATOR","Read the current container label; confirm site, rate, PPE, weather and irrigation directions."],
+    [0,"CREW","Calibrate, apply evenly, keep product off hardscape and photograph the completed area."],
+    [0,"APPLICATOR","Record product, amount, area, applicator, weather, lot when available and water-in instruction."],
+    [3,"CREW / REVIEW","48–72 hour check for burn, streaking, runoff, irrigation failure or other reaction."],
+    [14,"OWNER / REVIEW","Compare color and growth; save photos and set the next seasonal window."]]},
+  fungus:{name:"Fungus / Disease Response",icon:"🍄",color:"red",steps:[
+    [0,"CREW","Photograph the whole pattern, patch edges and individual blades before treatment."],
+    [0,"IRRIGATION","Check runtime, start times, drainage, root-zone moisture and overnight leaf wetness."],
+    [0,"OWNER / QUALIFIED","Identify likely disease and rule out drought, burn, insects, compaction and mower damage."],
+    [0,"APPLICATOR","Verify California registration, target/site, active ingredient, FRAC group, label rate and PPE."],
+    [0,"APPLICATOR","Apply only if diagnosis and label support it; complete pesticide-use record."],
+    [3,"CREW / REVIEW","48–72 hour recheck: compare same photos, moisture and expanding or drying edges."],
+    [7,"OWNER / REVIEW","Seven-day review; correct irrigation/cultural causes and decide whether label permits another action."],
+    [14,"OWNER / REVIEW","Fourteen-day review; document recovery, reseed needs and prevention watch window."],
+    [28,"OWNER","Close or continue the recovery plan. Never make an automatic third fungicide application."]]},
+  seed:{name:"Aeration + Overseed",icon:"🌱",color:"green",steps:[
+    [-14,"IRRIGATION","Audit coverage, repair heads/valves and confirm every thin area can be watered evenly."],
+    [-7,"OWNER / LEAD","Identify grass, measure area, check herbicide conflicts, compaction and thatch depth."],
+    [0,"CREW","Mow/prep, mark irrigation, core aerate where approved, seed in two directions and ensure soil contact."],
+    [0,"APPLICATOR","Starter fertilizer only when soil/site and current label support it; record all materials and rates."],
+    [1,"IRRIGATION","Days 0–7: run the temporary seed program; keep the surface damp without runoff or puddling."],
+    [8,"IRRIGATION","Days 8–14: reduce frequency carefully; inspect germination and spot-seed missed areas."],
+    [15,"CREW / REVIEW","Days 15–28: transition toward deeper watering; photograph density and weak areas."],
+    [28,"CREW","First mow only when seedlings are tall enough; follow one-third rule and use clean/sharp equipment."],
+    [35,"OWNER / REVIEW","After two mowings, return toward the seasonal established-turf irrigation program."]]},
+  aerate:{name:"Core Aeration",icon:"🕳️",color:"orange",steps:[
+    [-7,"LEAD","Probe compaction, confirm active growth and check seed/pre-emergent conflicts."],
+    [0,"IRRIGATION","Moisten dry-hard soil if needed, but stop if soil is saturated or turf is stressed."],
+    [0,"CREW","Mark every head, valve, shallow line and hazard; photograph the setup."],
+    [0,"CREW","Complete approved passes, protect hardscape and leave plugs unless scope says otherwise."],
+    [7,"CREW / REVIEW","Check recovery, irrigation coverage and any damaged or missed areas."]]},
+  irrigation:{name:"Irrigation Audit / Repair",icon:"💧",color:"blue",steps:[
+    [0,"LEAD","Record timer brand/model/location, owner control and every active program/start time."],
+    [0,"CREW","Run every station and map station number, area, plant type and delivery/head type."],
+    [0,"CREW","Record leaks, breaks, clogs, pressure, overspray, runoff, pooling and dry coverage."],
+    [0,"OWNER / LEAD","Catch-can or root-zone test where coverage is uncertain; prioritize repairs."],
+    [1,"REPAIR CREW","Complete approved repairs and retest each repaired station."],
+    [2,"LEAD","Set seasonal days, starts, cycles and minutes; photograph controller screens."],
+    [7,"CREW / REVIEW","Recheck moisture and turf/plant response; adjust only from field evidence."]]},
+  weed:{name:"Weed Identification + Response",icon:"🧪",color:"orange",steps:[
+    [0,"CREW","Photograph whole patch, leaf, stem, flower/seedhead and nearby desirable plant."],
+    [0,"OWNER / QUALIFIED","Identify weed and severity: some, moderate or severe; map affected areas."],
+    [0,"IRRIGATION","Check overwatering, thin turf, bare soil, compaction and pre-emergent water-in history."],
+    [0,"APPLICATOR","Choose a current label-matched treatment only if needed; check seed and temperature conflicts."],
+    [0,"APPLICATOR","Apply/hand-remove/mechanically remove as selected; complete use record when pesticide is used."],
+    [7,"CREW / REVIEW","Seven-day photo check and spot map update."],
+    [14,"OWNER / REVIEW","Fourteen-day review; close, retreat if label permits, or revise diagnosis."]]},
+  recovery90:{name:"Jalin Turf Recovery - 90 Day",icon:"🚑",color:"red",fixed:true,steps:[
+    ["2026-09-09","MICHAEL + CREW","Baseline photos; run Stations 16–19; catch-can and root-zone audit; disease and fungicide-record check."],
+    ["2026-09-16","CREW / REVIEW","Correct coverage and leaks; mow 3.25–3.5 in.; measure thatch; recovery feed only if disease is quiet and turf is not stressed."],
+    ["2026-09-23","MICHAEL + CREW","Approve core aeration, overseeding and thin compost topdress; starter fertilizer only if soil test and label support it."],
+    ["2026-09-30","CREW / REVIEW","Check germination, bare areas, runoff and the temporary seed-watering program. Send fixed-view photos."],
+    ["2026-10-07","MICHAEL + CREW","Review germination and coverage; spot-seed missed areas; verify moisture is even without puddling."],
+    ["2026-10-14","CREW / REVIEW","First seedling mow only at 3.5–4 in.; cut near 3 in. and follow the one-third rule. Photograph weak areas."],
+    ["2026-10-21","MICHAEL + CREW","Establishment, disease and irrigation review; approve corrective work and update Jalin."],
+    ["2026-10-28","CREW / REVIEW","After two mowings, transition Program A toward deeper, less-frequent established-turf watering."],
+    ["2026-11-04","CREW / REVIEW","Take the same three photos; estimate turf density; mark open or declining areas for correction."],
+    ["2026-11-11","CREW / REVIEW","Inspect moisture, weeds, disease and leaf buildup. No herbicide unless the seed-product label allows it."],
+    ["2026-11-18","MICHAEL + CREW","Fall progress review; approve slow-release fall feed only if growth, weather, soil and label allow it."],
+    ["2026-11-25","CREW / REVIEW","Clear leaves; check drainage and rain shutoff; photograph weak areas and verify no standing water."],
+    ["2026-12-02","MICHAEL + CREW","90-day closeout; before/after photos; winter timer review; customer update and spring punch list."]]},
+  generic:{name:"Step-by-Step Program",icon:"✅",color:"gold",steps:[
+    [0,"OWNER / LEAD","Confirm the problem, goal, scope, measurements and photos."],
+    [0,"IRRIGATION","Check irrigation and root-zone moisture before treatment or construction."],
+    [0,"CREW","Complete the approved work and record materials, labor and photos."],
+    [3,"CREW / REVIEW","48–72 hour condition and irrigation check."],
+    [14,"OWNER / REVIEW","Compare results, close the program or write the next action."]]}
+};
+
+function v4AddDays(iso,days){const d=new Date((iso||new Date().toISOString().slice(0,10))+"T12:00:00");d.setDate(d.getDate()+Number(days||0));return d.toISOString().slice(0,10);}
+function v4MakeEnrollment(accountId,type,startDate){
+  const t=V4_WORKFLOWS[type]||V4_WORKFLOWS.generic,start=startDate||new Date().toISOString().slice(0,10);
+  return{id:"E-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),accountId:accountId,type:type,name:t.name,startDate:start,status:"active",created:new Date().toISOString(),steps:t.steps.map((s,i)=>({id:"S"+(i+1),due:t.fixed?s[0]:v4AddDays(start,s[0]),role:s[1],task:s[2],done:false,doneDate:"",note:""}))};
+}
+function v4SeedJalin(){
+  if(!S.v4.enrollments.some(e=>e.accountId==="C-WED-3"&&e.type==="recovery90"))S.v4.enrollments.push(v4MakeEnrollment("C-WED-3","recovery90","2026-09-09"));
+  if(!S.v4.irrigation["C-WED-3"]){
+    const st=(n,area,zone,delivery,program,note)=>({no:n,area:area,zone:zone,delivery:delivery,program:program,note:note||""});
+    S.v4.irrigation["C-WED-3"]={notes:"Rain, wet soil or runoff overrides the timer. Established turf runs before 8 AM; seed cycles are the exception. Repair coverage first.",controllers:[{id:"T-JALIN-1",name:"Main Irrigation Timer",brand:"",model:"",location:"3218 E Keyes Rd - verify controller location",owner:"Programs A/C: CVCS · Program B: Jalin",seasonal:{
+      January:"A: Sat if dry, 5:00 AM, 1 cycle, S16–19 = 14/15/14/15 min. C: Tue if dry; flowers 5, drip 10, shrubs 8, trees 20 min.",
+      February:"A: Sat, 4:45/5:45 AM, 2 cycles, S16–19 = 12/13/12/13. C: Tue; flowers 7, drip 14, shrubs 12, trees 25.",
+      March:"A: Tue/Sat, 4:30/5:30 AM, 2 cycles, S16–19 = 11/12/11/12. C: Tue; flowers 10, drip 20, shrubs 18, trees 35.",
+      April:"A: Mon/Wed/Sat, 4:30/5:30 AM, 2 cycles, S16–19 = 10/11/10/11. C: Tue/Fri; flowers 9, drip 15, shrubs 12, trees 25.",
+      May:"A: Mon/Wed/Sat, 4:30/5:30 AM, 2 cycles, S16–19 = 14/15/14/15. C: Tue/Fri; flowers 12, drip 20, shrubs 16, trees 35.",
+      June:"A: Mon/Wed/Sat, 3:30/4:40/5:50 AM, 3 cycles, S16–19 = 11/12/11/12. C: Tue/Fri; flowers 15, drip 25, shrubs 20, trees 45.",
+      July:"A: Mon/Wed/Sat, 3:30/4:40/5:50 AM, 3 cycles, S16–19 = 12/13/12/13. C: Tue/Fri; flowers 16, drip 28, shrubs 22, trees 50.",
+      August:"A: Mon/Wed/Sat, 3:30/4:40/5:50 AM, 3 cycles, S16–19 = 10/11/10/11. C: Tue/Fri; flowers 14, drip 24, shrubs 19, trees 45.",
+      September:"A: Mon/Wed/Sat, 4:30/5:30 AM, 2 cycles, S16–19 = 12/13/12/13. C: Tue/Fri; flowers 11, drip 18, shrubs 15, trees 35.",
+      October:"A: Tue/Sat, 4:30/5:30 AM, 2 cycles, S16–19 = 11/12/11/12. C: Tue; flowers 12, drip 20, shrubs 18, trees 35.",
+      November:"A: Sat if dry, 4:45/5:45 AM, 2 cycles, S16–19 = 10/11/10/11. C: Tue if dry; flowers 7, drip 12, shrubs 10, trees 25.",
+      December:"A: Sat if dry, 5:00 AM, 1 cycle, S16–19 = 7/8/7/8. C: off."
+    },programs:[
+      {name:"A - Established Lawn",detail:"Stations 16–19. Seasonal days, starts, cycles and minutes from the Jalin Timer Cheat Sheet."},
+      {name:"B - Jalin Control",detail:"Stations 1, 2 and 15. Redwood uses a 12–24 hour low-flow deep soak only when drainage and soil moisture justify it; stop for ponding or saturation."},
+      {name:"C - Plantings",detail:"Stations 3–14 and 20. One 2:00 AM start on the seasonal planting schedule."},
+      {name:"Temporary A - Seeding",detail:"Days 0–7: 7:00/11:00/2:00, 4–6 min. Days 8–14: 7:00/1:00, 6–8 min. Days 15–28: 6:00 AM, 12–18 min. After two mowings, return toward October established-turf row."}
+    ],stations:[
+      st(1,"Vegetable Box Left","Planter","Verify drip/emitter","B"),st(2,"Vegetable Box Right","Planter","Verify drip/emitter","B"),
+      st(3,"Flowers","Flowers","Verify delivery","C"),st(4,"Plantings","Planter","Drip","C"),st(5,"Plantings","Planter","Drip","C"),st(6,"Plantings","Planter","Drip","C"),
+      st(7,"Groundcover / Shrubs","Shrubs","Verify delivery","C"),st(8,"Groundcover / Shrubs","Shrubs","Verify delivery","C"),st(9,"Groundcover / Shrubs","Shrubs","Verify delivery","C"),st(10,"Plantings","Planter","Drip","C"),
+      st(11,"Trees","Trees","Verify bubbler/drip","C"),st(12,"Flowers","Flowers","Verify delivery","C"),st(13,"Flowers","Flowers","Verify delivery","C"),st(14,"Groundcover / Shrubs","Shrubs","Verify delivery","C","Confirm this is plants, not pond fill."),
+      st(15,"Redwood","Tree","Low-flow deep soak","B","Owner controlled; moisture/drainage decision."),st(16,"Front / North Lawn","Grass","Verify pop-up/rotor/nozzle","A"),st(17,"West Lawn","Grass","Verify pop-up/rotor/nozzle","A"),st(18,"North Lawn","Grass","Verify pop-up/rotor/nozzle","A"),st(19,"South Lawn","Grass","Verify pop-up/rotor/nozzle","A"),st(20,"Trees","Trees","Verify bubbler/drip","C")
+    ]}]};
+  }
+  if(!S.v4.actions.some(x=>x.accountId==="C-WED-3"&&x.type==="annual-disease-watch"))S.v4.actions.push({id:"A-JALIN-2027-DISEASE",accountId:"C-WED-3",type:"annual-disease-watch",text:"Begin Jalin disease-prevention scouting: irrigation, moisture, fixed photos and symptom check before summer stress",due:"2027-05-01",done:false});
+}
+
+function v4TierDefault(a){const n=CVCS_TIER_MAP[a.id];return n==="1"?"gold":n==="2"?"silver":"bronze";}
+function v4SiteDefault(a){
+  if(/white crane|jalin|jadin/i.test(a.name))return"recovery";
+  if(/mcdonald/i.test(a.name))return"mcd";
+  if(/apartment|\bapts\b|villas/i.test(a.name))return"apartment";
+  return"standard";
+}
 function v4Ensure(){
-  if(!S.v4)S.v4={accounts:{},walks:[],actions:[],version:1};
-  S.v4.accounts=S.v4.accounts||{};S.v4.walks=S.v4.walks||[];S.v4.actions=S.v4.actions||[];
+  if(!S.v4)S.v4={accounts:{},walks:[],actions:[],version:0};
+  S.v4.accounts=S.v4.accounts||{};S.v4.walks=S.v4.walks||[];S.v4.actions=S.v4.actions||[];S.v4.enrollments=S.v4.enrollments||[];S.v4.irrigation=S.v4.irrigation||{};S.v4.reportHistory=S.v4.reportHistory||[];
+  S.edits=S.edits||{};S.edits["C-WED-3"]=Object.assign({},S.edits["C-WED-3"]||{},{name:"Jalin Weststeyn"});
+  if((S.v4.version||0)<2){
+    ACC().forEach(a=>{const v=S.v4.accounts[a.id]||(S.v4.accounts[a.id]={});const old=a.tier==="A"?"gold":a.tier==="B"?"silver":"bronze";
+      if(!v.tier||v.tier===old)v.tier=v4TierDefault(a);
+      v.siteType=v.siteType||v4SiteDefault(a);
+      if(v.next==="Review this month's scheduled work"){v.next="";v.nextManual=false;}
+    });
+    S.v4.version=2;
+  }
+  if((S.v4.version||0)<3){v4SeedJalin();S.v4.version=3;}
 }
 function v4Data(id){
   v4Ensure();const a=findAcc(id),v=S.v4.accounts[id]||(S.v4.accounts[id]={});
   v.programs=v.programs||[];
   if(a&&a.lawn>0&&!v.programs.includes("fert"))v.programs.push("fert");
   if(a&&a.trees&&!v.programs.includes("trees"))v.programs.push("trees");
-  v.status=v.status||"current";v.tier=v.tier||(a&&a.tier==="A"?"gold":a&&a.tier==="B"?"silver":"bronze");
-  v.next=v.next||"Review this month's scheduled work";v.nextDate=v.nextDate||"";v.condition=v.condition||"Good";
+  v.tier=v.tier||(a?v4TierDefault(a):"bronze");v.siteType=v.siteType||(a?v4SiteDefault(a):"standard");
+  if(v.siteType==="recovery"){["fungus","irrigation","seed"].forEach(p=>{if(!v.programs.includes(p))v.programs.push(p);});}
+  if(v.siteType==="mcd"&&!v.programs.includes("weed"))v.programs.push("weed");
+  if((v.siteType==="apartment"||v.siteType==="shrub")&&!v.programs.includes("shrubs"))v.programs.push("shrubs");
+  v.status=v.status||(v.siteType==="recovery"?"progress":"current");v.nextDate=v.nextDate||"";v.condition=v.condition||(v.siteType==="recovery"?"Recovery":"Good");v.weedLevel=v.weedLevel||"none";
+  v.grassType=v.grassType||(id==="C-WED-3"?"Tall fescue - verify":"Not identified");v.knownWeeds=v.knownWeeds||"";v.knownDisease=v.knownDisease||(id==="C-WED-3"?"Fungus history - two treatments in August 2026; exact disease and active ingredient to confirm":"");v.knownPlants=v.knownPlants||(id==="C-WED-3"?"Redwood on Station 15; vegetables on Stations 1-2":"");
   return v;
 }
+function v4CalendarKeys(tier,site,legacy){
+  if(site==="mcd")return CVCS_CALENDARS.mcd;
+  if(site==="apartment")return CVCS_CALENDARS.apartment;
+  if(site==="recovery")return CVCS_CALENDARS.recovery;
+  const base=CVCS_CALENDARS[tier]||{grass:DATA.grassCal[legacy]||{},bed:DATA.bedCal[legacy]||{}};
+  if(site==="shrub")return{grass:base.grass,bed:CVCS_CALENDARS.silver.bed};
+  return base;
+}
+function v4CalendarFor(a){
+  if(!S||!a)return{grass:{},bed:{}};
+  const v=v4Data(a.id);return v4CalendarKeys(v.tier,v.siteType,a.tier);
+}
 function v4Status(v){
-  if(v.status==="overdue"||v.status==="urgent")return["red","URGENT"];
+  if(v.status==="overdue"||v.status==="urgent")return["red","FIX NOW"];
   if(v.status==="blocked")return["yellow","WAITING"];
   if(v.status==="scheduled")return["blue","SCHEDULED"];
-  if(v.status==="progress")return["yellow","IN PROGRESS"];
-  return["","CURRENT"];
+  if(v.status==="progress")return["orange","WORKING ON IT"];
+  return["good","ON TRACK"];
+}
+function v4SuggestedNext(a,v,m){
+  m=m||month;
+  if(v.siteType==="recovery"){
+    if(m==="September"||m==="October")return"Check irrigation, take 3 fixed photos, then complete approved aeration and seed recovery work";
+    return"Complete the weekly recovery check and compare the same 3 photos";
+  }
+  if(v.siteType==="mcd")return"Walk turf, beds, entrances and irrigation; handle the scheduled restaurant care window";
+  if(v.siteType==="apartment")return"Walk common turf, shrubs, irrigation and safety areas; complete this month’s scheduled work";
+  if(v.weedLevel==="severe")return"Identify and map severe weeds, choose a label-matched response, then schedule 7- and 14-day checks";
+  if(v.programs.includes("fungus")&&(m==="May"||m==="June"||m==="July"||m==="August"||m==="September"))return"Scout and photograph possible disease; check irrigation before choosing any fungicide";
+  const cal=v4CalendarKeys(v.tier,v.siteType,a.tier),work=[];
+  if((cal.grass||{})[m])work.push("turf: "+P(cal.grass[m]).name);
+  if((cal.bed||{})[m])work.push("beds: "+P(cal.bed[m]).name);
+  if(work.length)return"Verify site and label, then complete "+work.join(" + ");
+  return CVCS_MONTH_FOCUS[m]||"Walk the property and record the next needed action";
+}
+function v4Next(a,v){return v.nextManual&&v.next?v.next:v4SuggestedNext(a,v,month);}
+function v4ProgramLabel(id){const z=V4_PROGRAMS.find(x=>x[0]===id);return z?z[1]:id;}
+function v4SiteLabel(id){return(CVCS_SITES[id]||CVCS_SITES.standard).name;}
+function v4TierLabel(id){return(CVCS_TIERS[id]||CVCS_TIERS.bronze).name;}
+function v4Enrollments(accountId,activeOnly){v4Ensure();return S.v4.enrollments.filter(e=>e.accountId===accountId&&(!activeOnly||e.status==="active"));}
+function v4EnrollmentState(e){
+  const done=e.steps.filter(s=>s.done).length,next=e.steps.find(s=>!s.done),pct=e.steps.length?Math.round(done/e.steps.length*100):0,today=new Date().toISOString().slice(0,10);
+  if(done===e.steps.length)return{pct:100,next:null,cls:"green",label:"COMPLETE"};
+  if(next&&next.due<today)return{pct:pct,next:next,cls:"red",label:"OVERDUE"};
+  if(done)return{pct:pct,next:next,cls:"orange",label:"IN PROGRESS"};
+  return{pct:pct,next:next,cls:"blue",label:"READY"};
+}
+function v4WorkflowType(program){return V4_WORKFLOWS[program]?program:"generic";}
+async function v4StartChecklist(accountId,type){
+  v4Ensure();const use=v4WorkflowType(type),existing=S.v4.enrollments.find(e=>e.accountId===accountId&&e.type===use&&e.status==="active");
+  if(!existing)S.v4.enrollments.push(v4MakeEnrollment(accountId,use,new Date().toISOString().slice(0,10)));
+  await save();
+}
+async function v4ToggleProgramStep(enrollmentId,stepId){
+  const e=S.v4.enrollments.find(x=>x.id===enrollmentId);if(!e)return;const s=e.steps.find(x=>x.id===stepId);if(!s)return;s.done=!s.done;s.doneDate=s.done?new Date().toISOString().slice(0,10):"";
+  if(e.steps.every(x=>x.done)){e.status="complete";e.completed=new Date().toISOString();const v=v4Data(e.accountId);if(v.status!=="urgent")v.status="current";if(e.type==="fungus"){const watch=v4AddDays(e.startDate,335);if(!S.v4.actions.some(a=>a.accountId===e.accountId&&a.type==="annual-disease-watch"&&a.due===watch))S.v4.actions.push({id:"A-"+Date.now(),accountId:e.accountId,type:"annual-disease-watch",text:"Begin disease-prevention scouting before last year’s fungus window",due:watch,done:false});}}
+  else e.status="active";
+  await save();
+}
+async function v4RestartProgram(accountId,type){S.v4.enrollments.push(v4MakeEnrollment(accountId,v4WorkflowType(type),new Date().toISOString().slice(0,10)));await save();}
+function v4TrackerHTML(e){
+  const st=v4EnrollmentState(e),today=new Date().toISOString().slice(0,10);
+  return '<div class="tracker-card '+st.cls+'"><div class="tracker-head"><div><b>'+((V4_WORKFLOWS[e.type]||V4_WORKFLOWS.generic).icon)+' '+esc(e.name)+'</b><span>'+st.label+' · Started '+e.startDate+(st.next?' · Next due '+st.next.due:'')+'</span></div><strong class="tracker-pct">'+st.pct+'%</strong></div><div class="tracker-bar"><div class="tracker-fill" style="width:'+st.pct+'%"></div></div>'+e.steps.map(s=>'<div class="tracker-step '+(s.done?'done ':'')+(!s.done&&s.due<today?'overdue':'')+'"><button onclick="v4ToggleProgramStep(\''+e.id+'\',\''+s.id+'\')">'+(s.done?'✓':'○')+'</button><span class="tracker-date">'+s.due+(s.doneDate?' ✓ '+s.doneDate:'')+'</span><span class="tracker-task"><b>'+esc(s.role)+'</b>'+esc(s.task)+'</span></div>').join("")+'</div>';
+}
+function v4ProgramTrackersHTML(a,v){
+  const active=v4Enrollments(a.id,true),startedTypes=new Set(active.map(e=>e.type)),available=v.programs.filter(p=>!startedTypes.has(v4WorkflowType(p)));
+  let h='<div class="v4-section"><h3>Active step-by-step programs</h3><div class="rsub">Check off each step. The next incomplete step becomes the forecast for Michael and the crew.</div>';
+  if(active.length)h+=active.map(v4TrackerHTML).join("");else h+='<div class="rsub" style="padding:12px 0">No active checklist yet. Start one below.</div>';
+  if(available.length)h+='<div class="start-programs">'+available.map(p=>'<button class="start-program" onclick="v4StartChecklist(\''+a.id+'\',\''+p+'\')">＋ Start '+v4ProgramLabel(p)+'</button>').join("")+'</div>';
+  const completed=v4Enrollments(a.id,false).filter(e=>e.status==="complete");
+  if(completed.length)h+='<div class="rsub" style="margin-top:12px"><b>'+completed.length+' completed program'+(completed.length===1?'':'s')+'</b> saved in this account’s history.</div>';
+  return h+'</div>';
+}
+function v4EnrollmentNext(a){const e=v4Enrollments(a.id,true).map(x=>({e:x,s:v4EnrollmentState(x)})).sort((x,y)=>(x.s.next?x.s.next.due:"9999").localeCompare(y.s.next?y.s.next.due:"9999"))[0];return e&&e.s.next?{name:e.e.name,step:e.e.steps.findIndex(s=>s.id===e.s.next.id)+1,total:e.e.steps.length,due:e.s.next.due,task:e.s.next.task,cls:e.s.cls}:null;}
+
+function easyGo(where){
+  if(where==="products"){libTab="products";tab="library";}
+  else if(where==="diagnose"){libTab="diag";tab="library";}
+  else if(where==="reports"){histTab="history";tab="history";}
+  else tab=where;
+  expanded=null;render();
+}
+function easyMoreHTML(){
+  const items=[["📅","Monthly Schedule","What is planned and what is finished","schedule"],["🛒","Order List","Bags, jugs and estimated cost","order"],["👷","Juan’s Crew Route","Simple crew work sheet","juan"],["🌱","Aerate + Seed","Fall and spring project tracker","aerseed"],["💡","Lighting","Quarterly lighting checks","lights"],["🚜","Lot Abatement","Mechanical weeding and fire clearance","abate"],["💵","Estimates","Build and track customer bids","bids"],["🗓️","Master Year","Whole-year treatment overview","master"],["☑️","Seasonal Checklists","Seed, gutter, tree and abatement checklists","programs"],["🩺","Diagnose","Weeds, fungus, pests and trees","diagnose"],["⚙️","Manage Accounts","Add or edit account details","accounts"],["📚","History","Applications, purchases and PDFs","history"]];
+  return '<div class="secrow"><div><div class="sechead">More Tools</div><div class="rsub">The everyday buttons stay simple. Everything else is here.</div></div></div><div class="more-grid">'+items.map(x=>'<button class="more-btn" onclick="easyGo(\''+x[3]+'\')"><span class="more-icon">'+x[0]+'</span><b>'+x[1]+'</b><span>'+x[2]+'</span></button>').join("")+'</div>';
+}
+function v4RecordReport(kind,label,accountId,filename){v4Ensure();const rec={id:"R-"+Date.now()+"-"+Math.random().toString(36).slice(2,6),kind:kind,label:label,accountId:accountId||"",filename:filename||"CVCS_Report.pdf",month:month,year:year,created:new Date().toISOString()};S.v4.reportHistory.unshift(rec);if(S.v4.reportHistory.length>150)S.v4.reportHistory=S.v4.reportHistory.slice(0,150);saveQuiet();return rec;}
+function v4ReportDB(){return new Promise((res,rej)=>{if(typeof indexedDB==="undefined"){rej(new Error("no indexedDB"));return;}const r=indexedDB.open("cvcs-report-pdfs",1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains("pdfs"))r.result.createObjectStore("pdfs",{keyPath:"id"});};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function v4ReportPut(id,blob,filename){try{const db=await v4ReportDB();await new Promise((res,rej)=>{const tx=db.transaction("pdfs","readwrite");tx.objectStore("pdfs").put({id:id,blob:blob,filename:filename});tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}catch(e){}}
+async function v4ReportGet(id){try{const db=await v4ReportDB();return await new Promise((res,rej)=>{const tx=db.transaction("pdfs","readonly"),r=tx.objectStore("pdfs").get(id);r.onsuccess=()=>res(r.result||null);r.onerror=()=>rej(r.error);});}catch(e){return null;}}
+async function v4DeliverPDF(doc,filename,kind,label,accountId){const rec=v4RecordReport(kind,label,accountId,filename),blob=doc.output("blob");doc.save(filename);await v4ReportPut(rec.id,blob,filename);render();}
+function v4DueSteps(fromISO,toISO){
+  const out=[];S.v4.enrollments.filter(e=>e.status==="active").forEach(e=>{const a=findAcc(e.accountId);if(!a)return;e.steps.filter(s=>!s.done&&s.due>=fromISO&&s.due<=toISO).forEach(s=>out.push({a:a,e:e,s:s}));});
+  return out.sort((x,y)=>x.s.due.localeCompare(y.s.due)||x.a.name.localeCompare(y.a.name));
+}
+function v4ReportIcon(kind){return kind==="account"?"🏡":kind==="week"?"👷":kind==="month"?"📅":kind==="cycle"?"🔄":kind==="year"?"🗓️":"📄";}
+async function v4ReprintReport(id){const r=S.v4.reportHistory.find(x=>x.id===id);if(!r)return;const stored=await v4ReportGet(id);if(stored&&stored.blob){const a=document.createElement("a");a.href=URL.createObjectURL(stored.blob);a.download=stored.filename||r.filename||"CVCS_Report.pdf";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);return;}if(r.kind==="account")v4PDF(r.accountId,true);else v4ReportPDF(r.kind,true);}
+function v4ReportsHTML(){
+  v4Ensure();if(!reportAccount||!findAcc(reportAccount))reportAccount=findAcc("C-WED-3")?"C-WED-3":(ACC()[0]&&ACC()[0].id);
+  const today=new Date().toISOString().slice(0,10),weekEnd=v4AddDays(today,7),due=v4DueSteps(today,weekEnd),active=S.v4.enrollments.filter(e=>e.status==="active").length,history=S.v4.reportHistory;
+  let h='<div class="program-lead"><h2>Reports + Forecast Center</h2><p>Print today’s work, active program progress, the month, the 90-day cycle, the whole year or one property. Every generated report is saved in the history list.</p></div>';
+  h+='<div class="v4-kpis"><div class="v4-kpi"><b>'+due.length+'</b><span>Program steps due next 7 days</span></div><div class="v4-kpi"><b>'+active+'</b><span>Active step-by-step programs</span></div><div class="v4-kpi"><b>'+planFor(month).length+'</b><span>'+month+' scheduled properties</span></div><div class="v4-kpi"><b>'+history.length+'</b><span>Reports generated</span></div></div>';
+  h+='<div class="report-grid"><div class="report-card"><span class="report-icon">👷</span><b>Work Week</b><p>Incomplete program steps due in the next seven days, sorted by date and property.</p><button class="btn orange" onclick="v4ReportPDF(\'week\')">Print Work Week PDF</button></div><div class="report-card"><span class="report-icon">📅</span><b>'+month+' Plan</b><p>All scheduled treatments plus active program steps due during the selected month.</p><button class="btn orange" onclick="v4ReportPDF(\'month\')">Print Monthly PDF</button></div><div class="report-card"><span class="report-icon">🔄</span><b>Active Program Cycle</b><p>Every active checklist, percent complete, next due step and overdue work.</p><button class="btn orange" onclick="v4ReportPDF(\'cycle\')">Print Cycle PDF</button></div><div class="report-card"><span class="report-icon">🗓️</span><b>'+year+' Forecast</b><p>Monthly treatment counts, product windows and active program workload for the year.</p><button class="btn orange" onclick="v4ReportPDF(\'year\')">Print Year PDF</button></div><div class="report-card" style="grid-column:span 2"><span class="report-icon">🏡</span><b>Individual Property</b><p>Tier, property plan, add-ons, month-by-month schedule, irrigation summary, active steps and inspection history.</p><select class="fi" onchange="reportAccount=this.value">'+ACC().map(a=>'<option value="'+a.id+'" '+(a.id===reportAccount?'selected':'')+'>'+esc(a.name)+'</option>').join("")+'</select><button class="btn orange" style="margin-top:9px" onclick="v4PDF(reportAccount)">Print Property PDF</button></div></div>';
+  h+='<div class="program-heading">PDF / Report History</div><div class="program-sub">Reports are listed by account and date. Reprint downloads the exact saved PDF on this device; if the file is unavailable, the app rebuilds it from the saved account data.</div>';
+  if(history.length)h+='<div class="report-history">'+history.slice(0,30).map(r=>'<div class="report-row"><span>'+v4ReportIcon(r.kind)+'</span><div><b>'+esc(r.label)+'</b><small>'+fmtDate(r.created)+(r.accountId&&findAcc(r.accountId)?' · '+esc(findAcc(r.accountId).name):'')+'</small></div><button class="btn ghost" onclick="v4ReprintReport(\''+r.id+'\')">Reprint</button></div>').join("")+'</div>';else h+='<div class="empty"><b>No reports generated yet.</b><p>Use one of the big buttons above.</p></div>';
+  return h;
+}
+function v4ReportPDF(kind,noRecord){
+  const J=window.jspdf&&window.jspdf.jsPDF;if(!J){alert("PDF library unavailable.");return;}const d=new J({unit:"pt",format:"letter"}),today=new Date().toISOString().slice(0,10);let title="",sub="",head=[],body=[];
+  if(kind==="week"){
+    const end=v4AddDays(today,7),rows=v4DueSteps(today,end);title="CVCS WORK WEEK";sub=today+" through "+end+" · "+rows.length+" incomplete program steps";head=[["DUE","PROPERTY","PROGRAM","LEAD","NEXT STEP"]];body=rows.map(x=>[x.s.due,x.a.name,x.e.name,x.s.role,x.s.task]);
+  }else if(kind==="month"){
+    const treatment=planFor(month),steps=S.v4.enrollments.flatMap(e=>{const a=findAcc(e.accountId);return a?e.steps.filter(s=>!s.done&&new Date(s.due+"T12:00:00").getFullYear()===year&&MONTHS[new Date(s.due+"T12:00:00").getMonth()]===month).map(s=>({a:a,e:e,s:s})):[];});title="CVCS MONTHLY WORK PLAN - "+month.toUpperCase()+" "+year;sub=treatment.length+" scheduled treatment properties · "+steps.length+" active program steps";head=[["PROPERTY","ROUTE","CARE PLAN","SCHEDULED WORK / ACTIVE STEP"]];body=treatment.map(r=>[r.a.name,r.a.route+" "+r.a.day,v4TierLabel(v4Data(r.a.id).tier)+" / "+v4SiteLabel(v4Data(r.a.id).siteType),[r.g?"Turf: "+P(r.g).name:"",r.b?"Beds: "+P(r.b).name:"",r.t?"Trees":""].filter(Boolean).join(" · ")]).concat(steps.map(x=>[x.a.name,x.a.route+" "+x.a.day,x.e.name,x.s.due+" · "+x.s.task]));
+  }else if(kind==="cycle"){
+    const rows=S.v4.enrollments.filter(e=>e.status==="active").map(e=>{const a=findAcc(e.accountId),st=v4EnrollmentState(e);return{a:a,e:e,st:st};}).filter(x=>x.a);title="CVCS ACTIVE PROGRAM CYCLE";sub=rows.length+" active step-by-step programs · generated "+today;head=[["PROPERTY","PROGRAM","PROGRESS","NEXT DUE","NEXT STEP"]];body=rows.map(x=>[x.a.name,x.e.name,x.st.pct+"%",x.st.next?x.st.next.due:"Complete",x.st.next?x.st.next.task:"All steps complete"]);
+  }else{
+    title="CVCS YEAR FORECAST - "+year;sub="Tier treatment windows, active program workload and next-year prevention watches";head=[["MONTH","TREATMENT PROPERTIES","TURF / BED WINDOWS","STEPS / WATCHES DUE"]];body=MONTHS.map(m=>{const rows=planFor(m),codes={};rows.forEach(r=>{if(r.g)codes[P(r.g).name]=(codes[P(r.g).name]||0)+1;if(r.b)codes[P(r.b).name]=(codes[P(r.b).name]||0)+1;});const steps=S.v4.enrollments.reduce((n,e)=>n+e.steps.filter(s=>!s.done&&new Date(s.due+"T12:00:00").getFullYear()===year&&MONTHS[new Date(s.due+"T12:00:00").getMonth()]===m).length,0),watches=S.v4.actions.filter(a=>!a.done&&a.due&&new Date(a.due+"T12:00:00").getFullYear()===year&&MONTHS[new Date(a.due+"T12:00:00").getMonth()]===m).length;return[m,rows.length,Object.entries(codes).map(x=>x[0]+" ("+x[1]+")").join(" · ")||"Inspection / planning month",steps+watches];});kind="year";
+  }
+  pdfHeader(d,title,sub);d.autoTable({startY:66,margin:{left:25,right:25,bottom:52},head:head,body:body,styles:{fontSize:7.5,cellPadding:4,overflow:"linebreak"},headStyles:{fillColor:NAVY,fontSize:7.5,fontStyle:"bold"},alternateRowStyles:{fillColor:[242,241,236]}});pdfFooter(d);const filename="CVCS_"+kind+"_Report_"+(kind==="month"?month+"_":"")+year+".pdf";if(noRecord)d.save(filename);else v4DeliverPDF(d,filename,kind,title.replace("CVCS ",""),"");
+}
+function v4AccountReportHistoryHTML(a){const rows=(S.v4.reportHistory||[]).filter(r=>r.accountId===a.id);return'<div class="v4-section"><h3>Property PDF history</h3>'+(rows.length?'<div class="report-history">'+rows.slice(0,8).map(r=>'<div class="report-row"><span>📄</span><div><b>'+esc(r.label)+'</b><small>'+fmtDate(r.created)+'</small></div><button class="btn ghost" onclick="v4ReprintReport(\''+r.id+'\')">Reprint</button></div>').join("")+'</div>':'<div class="rsub">No property PDF generated yet.</div>')+'</div>';}
+function v4WorkWeekHTML(){
+  const today=new Date().toISOString().slice(0,10),end=v4AddDays(today,7),due=v4DueSteps(today,end),overdue=[];S.v4.enrollments.filter(e=>e.status==="active").forEach(e=>{const a=findAcc(e.accountId);if(!a)return;e.steps.filter(s=>!s.done&&s.due<today).forEach(s=>overdue.push({a:a,e:e,s:s}));});overdue.sort((x,y)=>x.s.due.localeCompare(y.s.due));
+  const rows=planFor(month),remaining=rows.filter(r=>!status(r).complete);
+  let h='<div class="program-lead"><h2>Michael + Crew Work Week</h2><p>Program steps come first by due date. Check them off here, or open the property for the complete program and irrigation map.</p></div><div class="v4-kpis"><div class="v4-kpi"><b>'+overdue.length+'</b><span>Overdue program steps</span></div><div class="v4-kpi"><b>'+due.length+'</b><span>Due in the next 7 days</span></div><div class="v4-kpi"><b>'+remaining.length+'</b><span>'+month+' treatment stops left</span></div><div class="v4-kpi"><b>'+S.v4.actions.filter(a=>!a.done).length+'</b><span>Future follow-ups / watches</span></div></div>';
+  const section=(title,list,red)=>'<div class="program-heading">'+title+'</div>'+(list.length?list.map(x=>'<div class="tracker-card '+(red?'red':'blue')+'"><div class="tracker-head"><div><b>'+esc(x.a.name)+'</b><span>'+esc(x.e.name)+' · '+x.s.due+' · '+esc(x.s.role)+'</span></div><button class="btn ghost" onclick="v4Open(\''+x.a.id+'\')">Open Property</button></div><div class="tracker-step '+(red?'overdue':'')+'"><button onclick="v4ToggleProgramStep(\''+x.e.id+'\',\''+x.s.id+'\')">○</button><span class="tracker-date">'+x.s.due+'</span><span class="tracker-task">'+esc(x.s.task)+'</span></div></div>').join(""):'<div class="easy-legend"><span class="lg-good">✓ Nothing '+title.toLowerCase()+'</span></div>');
+  h+=section("Overdue - Handle First",overdue,true)+section("Due "+today+" through "+end,due,false);
+  h+='<div class="program-heading">Monthly Treatment Route</div><div class="program-sub">'+remaining.length+' '+month+' properties still have scheduled turf, bed or tree work.</div><button class="btn orange" style="width:100%" onclick="setTab(\'schedule\')">Open Full '+month+' Schedule</button>';
+  return h;
+}
+function v4MatchesFilter(a,v){
+  if(v4Filter==="all")return true;
+  if(v4Filter==="overdue")return v.status==="overdue"||v.status==="urgent";
+  return v.status===v4Filter||v.programs.includes(v4Filter)||v.tier===v4Filter||v.siteType===v4Filter;
 }
 function v4CommandHTML(){
-  v4Ensure();let list=ACC().filter(a=>a.name.toLowerCase().includes(v4Search.toLowerCase()));
-  if(v4Filter!=="all")list=list.filter(a=>{const v=v4Data(a.id);return v.status===v4Filter||v.programs.includes(v4Filter)||v.tier===v4Filter;});
+  v4Ensure();let list=ACC().filter(a=>(a.name+" "+(a.addr||"")).toLowerCase().includes(v4Search.toLowerCase()));
+  list=list.filter(a=>v4MatchesFilter(a,v4Data(a.id))).sort((a,b)=>{const rank={urgent:0,overdue:0,progress:1,blocked:2,scheduled:3,current:4};return(rank[v4Data(a.id).status]||4)-(rank[v4Data(b.id).status]||4)||a.name.localeCompare(b.name);});
   const overdue=ACC().filter(a=>["overdue","urgent"].includes(v4Data(a.id).status)).length;
   const follow=S.v4.actions.filter(x=>!x.done).length;
   const walks=S.v4.walks.filter(x=>x.date===new Date().toISOString().slice(0,10)).length;
-  let h='<div class="secrow"><div><div class="sechead">Account Command Center</div><div class="rsub">Every property · where it stands · what comes next</div></div><button class="btn orange" onclick="v4WalkStart()">+ Walk-through</button></div>';
-  h+='<div class="v4-kpis"><div class="v4-kpi"><b>'+ACC().length+'</b><span>Active accounts</span></div><div class="v4-kpi"><b>'+overdue+'</b><span>Urgent / overdue</span></div><div class="v4-kpi"><b>'+follow+'</b><span>Open actions</span></div><div class="v4-kpi"><b>'+walks+'</b><span>Walks today</span></div></div>';
-  h+='<div class="v4-toolbar"><input class="search" placeholder="Search account or address" value="'+esc(v4Search)+'" oninput="v4Search=this.value;render()"><button class="btn ghost" onclick="v4Filter=\'all\';render()">Clear</button></div>';
-  h+='<div class="v4-tabs">'+[["all","All"],["overdue","Overdue"],["progress","In progress"],["blocked","Waiting"],["gold","Gold"],["silver","Silver"],["bronze","Bronze"],["fungus","Fungus"],["weed","Weeds"],["seed","Seed"]].map(x=>'<button class="v4-filter '+(v4Filter===x[0]?"on":"")+'" onclick="v4Filter=\''+x[0]+'\';render()">'+x[1]+'</button>').join("")+'</div>';
+  let h='<div class="secrow"><div><div class="sechead">Properties</div><div class="rsub">Tap a big card to see the complete month-by-month plan.</div></div><button class="btn orange" onclick="v4WalkStart()">📋 Start Walk-Through</button></div>';
+  h+='<div class="easy-callout"><span class="call-icon">👆</span><div><b>Pick a property, then the app tells you what is next.</b><span>Gold, Silver and Bronze control attention. McDonald’s, Apartment, Shrub-Heavy and Recovery control the kind of work.</span></div><button class="btn" onclick="easyGo(\'tierhub\')">See Programs</button></div>';
+  h+='<div class="v4-kpis"><div class="v4-kpi"><b>'+ACC().length+'</b><span>Active properties</span></div><div class="v4-kpi"><b>'+overdue+'</b><span>Need action now</span></div><div class="v4-kpi"><b>'+follow+'</b><span>Open follow-ups</span></div><div class="v4-kpi"><b>'+walks+'</b><span>Walks saved today</span></div></div>';
+  h+='<div class="easy-legend"><span class="lg-good">● Green = On Track</span><span class="lg-blue">● Blue = Scheduled</span><span class="lg-watch">● Yellow = Watch / Waiting</span><span class="lg-red">● Red = Fix Now</span></div>';
+  h+='<div class="v4-toolbar"><input class="search" placeholder="🔎 Search property or address" value="'+esc(v4Search)+'" oninput="v4Search=this.value;render()"><button class="btn ghost" onclick="v4Search=\'\';v4Filter=\'all\';render()">Clear</button></div>';
+  h+='<div class="v4-tabs">'+[["all","All"],["overdue","Fix Now"],["progress","Working"],["gold","Gold"],["silver","Silver"],["bronze","Bronze"],["mcd","McDonald’s"],["apartment","Apartments"],["recovery","Recovery"],["fungus","Fungus"],["weed","Weeds"],["seed","Seed"]].map(x=>'<button class="v4-filter '+(v4Filter===x[0]?"on":"")+'" onclick="v4Filter=\''+x[0]+'\';render()">'+x[1]+'</button>').join("")+'</div>';
   h+='<div class="v4-grid">';
-  list.forEach(a=>{const v=v4Data(a.id),st=v4Status(v);h+='<button class="v4-acct '+v.tier+' '+st[0]+'" onclick="v4Open(\''+a.id+'\')"><div class="v4-top"><span class="v4-name">'+esc(a.name)+'</span><span class="v4-state '+st[0]+'">'+st[1]+'</span></div><div class="v4-next">Next: '+esc(v.next)+(v.nextDate?' · '+v.nextDate:'')+'</div><div class="v4-meta">Route '+a.route+' · '+a.day+' · '+esc(v.condition)+' condition · '+v.tier.toUpperCase()+'</div><div class="v4-chips">'+v.programs.map(p=>{const z=V4_PROGRAMS.find(x=>x[0]===p);return z?'<span class="v4-chip">'+z[1]+'</span>':'';}).join("")+'</div></button>';});
-  return h+'</div>'+(list.length?'':'<div class="empty"><b>No matching accounts</b><p>Change the filter or search.</p></div>');
+  list.forEach(a=>{const v=v4Data(a.id),st=v4Status(v),site=CVCS_SITES[v.siteType]||CVCS_SITES.standard,track=v4EnrollmentNext(a);h+='<button class="v4-acct '+v.tier+' '+site.cls+' '+st[0]+'" onclick="v4Open(\''+a.id+'\')"><div class="v4-top"><span class="v4-name">'+esc(a.name)+'</span><span class="v4-state '+st[0]+'">'+st[1]+'</span></div><div class="v4-next"><b>NEXT:</b> '+esc(track?track.task:v4Next(a,v))+(track?' · '+track.due:v.nextDate?' · '+v.nextDate:'')+'</div>'+(track?'<div class="v4-meta"><b>'+esc(track.name)+'</b> · Step '+track.step+' of '+track.total+'</div>':'')+'<div class="v4-meta"><b>'+v4TierLabel(v.tier).toUpperCase()+'</b> · '+esc(v4SiteLabel(v.siteType))+' · Route '+a.route+' · '+a.day+' · '+esc(v.condition)+'</div><div class="v4-chips">'+v.programs.slice(0,7).map(p=>'<span class="v4-chip">'+v4ProgramLabel(p)+'</span>').join("")+'</div></button>';});
+  return h+'</div>'+(list.length?'':'<div class="empty"><b>No matching properties</b><p>Tap Clear and try again.</p></div>');
+}
+function programCard(kind,id,p){return '<button class="program-card '+p.cls+'" onclick="programOpen={kind:\''+kind+'\',id:\''+id+'\'};render()"><span class="program-icon">'+p.icon+'</span><div class="program-name">'+p.name+'</div><span class="program-cadence">'+p.cadence+'</span><p>'+p.short+'</p><span class="openlabel">Open program →</span></button>';}
+function tierProgramsHTML(){
+  let h='<div class="program-lead"><h2>CVCS Program Builder</h2><p>Every property gets 1 care tier + 1 property plan + any needed add-ons. Change them from the property card and the month-by-month schedule updates.</p></div>';
+  h+='<div class="program-heading">1. Pick the care tier</div><div class="program-sub">This controls how often the crew checks, how often management reviews and how many core treatment windows are planned.</div><div class="program-grid">'+Object.keys(CVCS_TIERS).map(k=>programCard("tier",k,CVCS_TIERS[k])).join("")+'</div>';
+  h+='<div class="program-heading">2. Pick the property plan</div><div class="program-sub">This changes the work to match the site. A McDonald’s can still be Gold priority; an apartment can still be Silver care.</div><div class="program-grid">'+Object.keys(CVCS_SITES).map(k=>programCard("site",k,CVCS_SITES[k])).join("")+'</div>';
+  h+='<div class="program-heading">3. Add only what the property needs</div><div class="program-sub">Product routes and problem programs plug into the base schedule. They do not replace diagnosis, the current label or California requirements.</div><div class="program-grid">'+Object.keys(V4_MODULE_DETAILS).map(k=>programCard("module",k,V4_MODULE_DETAILS[k])).join("")+'</div>';
+  return h;
+}
+function v4AccountMonthText(a,v,m){
+  const cal=v4CalendarKeys(v.tier,v.siteType,a.tier),parts=[];
+  if((cal.grass||{})[m])parts.push("Turf: "+P(cal.grass[m]).name);
+  if((cal.bed||{})[m])parts.push("Beds: "+P(cal.bed[m]).name);
+  if(a.trees&&DATA.treeCal[m])parts.push(DATA.treeCal[m]==="APHID"?"Tree pest inspection / scheduled drench":"Tree root-zone care");
+  if(v.siteType==="recovery")parts.push(m==="September"||m==="October"?"Weekly recovery photos + approved seed work":"Weekly recovery check");
+  if(!parts.length)parts.push(CVCS_MONTH_FOCUS[m]);
+  return parts.join(" · ");
+}
+function programDetailHTML(){
+  if(!programOpen)return"";let p,title,body="";
+  if(programOpen.kind==="tier"){
+    p=CVCS_TIERS[programOpen.id];title=p.icon+" "+p.name+" Care Tier";
+    body='<div class="program-details"><p>'+p.short+'</p><ul><li><b>Checks:</b> '+p.checks+'</li><li><b>Nutrition:</b> '+p.nutrition+'</li></ul></div><div class="program-safety"><b>Safety gate:</b> Every application still requires site verification, current label review, weather/irrigation check and a completed use record.</div><div class="program-months">'+MONTHS.map(m=>{const cal=v4CalendarKeys(programOpen.id,"standard","A"),parts=[];if(cal.grass[m])parts.push("Turf: "+P(cal.grass[m]).name);if(cal.bed[m])parts.push("Beds: "+P(cal.bed[m]).name);return'<div class="program-month '+(m===month?'now':'')+'"><b>'+m+'</b><span>'+(parts.length?parts.join(" · "):CVCS_MONTH_FOCUS[m])+'</span></div>';}).join("")+'</div>';
+  }else if(programOpen.kind==="site"){
+    p=CVCS_SITES[programOpen.id];title=p.icon+" "+p.name+" Plan";
+    body='<div class="program-details"><p>'+p.short+'</p></div><div class="program-months">'+MONTHS.map(m=>{const cal=v4CalendarKeys("silver",programOpen.id,"B"),parts=[];if(cal.grass[m])parts.push("Turf: "+P(cal.grass[m]).name);if(cal.bed[m])parts.push("Beds: "+P(cal.bed[m]).name);if(programOpen.id==="recovery")parts.push("Weekly condition check + fixed photos");return'<div class="program-month '+(m===month?'now':'')+'"><b>'+m+'</b><span>'+(parts.length?parts.join(" · "):CVCS_MONTH_FOCUS[m])+'</span></div>';}).join("")+'</div>';
+  }else{
+    p=V4_MODULE_DETAILS[programOpen.id];title=p.icon+" "+p.name;
+    body='<div class="program-details"><p>'+p.short+'</p><ol>'+p.steps.map(x=>'<li>'+x+'</li>').join("")+'</ol></div><div class="program-safety"><b>Required:</b> The current container label is the legal direction. Confirm California registration, target/site, rate, PPE, weather, irrigation, seeding conflicts and reporting before use.</div>';
+  }
+  if(!p){programOpen=null;return"";}
+  return '<div class="modalwrap"><div class="modal"><div class="mhead"><span>'+title+'</span><button class="xbtn" onclick="programOpen=null;render()">✕</button></div><div class="mbody">'+body+'</div><div class="mfoot"><span style="flex:1"></span><button class="btn orange" onclick="programOpen=null;render()">Done</button></div></div></div>';
 }
 function v4Open(id){v4Acct=id;render();}
 function v4ProfileHTML(){
-  if(!v4Acct)return"";const a=findAcc(v4Acct);if(!a)return"";const v=v4Data(a.id),st=v4Status(v);
-  const walks=S.v4.walks.filter(w=>w.accountId===a.id).slice().reverse();
-  let h='<div class="modalwrap"><div class="modal"><div class="mhead"><span>Property Brain</span><button class="xbtn" onclick="v4Acct=null;render()">✕</button></div><div class="mbody">';
-  h+='<div class="v4-profile"><div class="v4-hero"><div style="flex:1"><div class="v4-title">'+esc(a.name)+'</div><div class="rsub">'+esc(a.addr||"Address not entered")+' · Route '+a.route+' · '+a.day+'</div></div><span class="v4-state '+st[0]+'">'+st[1]+'</span></div>';
-  h+='<div class="v4-section"><h3>Next Best Action</h3><input class="fi" value="'+esc(v.next)+'" onchange="v4Set(\'next\',this.value)"><div class="frow"><div><label class="fl">Due date</label><input class="fi" type="date" value="'+esc(v.nextDate)+'" onchange="v4Set(\'nextDate\',this.value)"></div><div><label class="fl">Status</label><select class="fi" onchange="v4Set(\'status\',this.value)">'+["current","scheduled","progress","blocked","overdue","urgent"].map(x=>'<option '+(v.status===x?'selected':'')+' value="'+x+'">'+x.toUpperCase()+'</option>').join("")+'</select></div></div></div>';
-  h+='<div class="v4-section"><h3>Account program</h3><div class="frow"><div><label class="fl">Tier</label><select class="fi" onchange="v4Set(\'tier\',this.value)">'+["gold","silver","bronze","custom"].map(x=>'<option '+(v.tier===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div><div><label class="fl">Condition</label><select class="fi" onchange="v4Set(\'condition\',this.value)">'+["Excellent","Good","Fair","Poor","Recovery"].map(x=>'<option '+(v.condition===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div></div><div class="v4-chips">'+V4_PROGRAMS.map(p=>'<button class="v4-chip" style="'+(v.programs.includes(p[0])?'background:#dcefDC;color:#225c28':'')+'" onclick="v4Program(\''+p[0]+'\')">'+p[1]+'</button>').join("")+'</div></div>';
-  h+='<div class="v4-section"><h3>History</h3>'+(walks.length?walks.map(w=>'<div class="v4-program"><span class="v4-dot '+(w.score<60?'red':w.score<85?'yellow':'')+'"></span><b>Walk-through · '+w.date+'</b><span>'+w.score+'%</span></div>').join(""):'<div class="rsub">No walk-throughs saved yet.</div>')+'</div>';
-  h+='<div class="v4-actions"><button class="btn orange" onclick="v4WalkStart(\''+a.id+'\')">Start walk-through</button><button class="btn" onclick="v4PDF(\''+a.id+'\')">Account PDF</button><button class="btn ghost" onclick="openAcct(\''+a.id+'\');v4Acct=null">Original account page</button></div></div></div><div class="mfoot"><span style="flex:1"></span><button class="btn ghost" onclick="v4Acct=null;render()">Close</button></div></div></div>';
+  if(!v4Acct)return"";const a=findAcc(v4Acct);if(!a)return"";const v=v4Data(a.id),st=v4Status(v),walks=S.v4.walks.filter(w=>w.accountId===a.id).slice().reverse();
+  let h='<div class="modalwrap"><div class="modal"><div class="mhead"><span>Property Brain</span><button class="xbtn" onclick="v4Acct=null;render()">✕</button></div><div class="mbody"><div class="v4-profile">';
+  h+='<div class="v4-hero"><div style="flex:1"><div class="v4-title">'+esc(a.name)+'</div><div class="rsub">'+esc(a.addr||"Address not entered")+' · Route '+a.route+' · '+a.day+'</div></div><span class="v4-state '+st[0]+'">'+st[1]+'</span></div>';
+  h+='<div class="v4-section"><h3>What happens next?</h3><div class="v4-next"><b>NEXT:</b> '+esc(v4Next(a,v))+'</div><label class="fl">Type a different next action only when needed</label><input class="fi" value="'+esc(v.nextManual?v.next:"")+'" placeholder="Leave blank to use the program suggestion" onchange="v4Set(\'next\',this.value)"><div class="frow"><div><label class="fl">Due date</label><input class="fi" type="date" value="'+esc(v.nextDate)+'" onchange="v4Set(\'nextDate\',this.value)"></div><div><label class="fl">Status</label><select class="fi" onchange="v4Set(\'status\',this.value)">'+[["current","ON TRACK"],["scheduled","SCHEDULED"],["progress","WORKING ON IT"],["blocked","WAITING"],["overdue","OVERDUE"],["urgent","FIX NOW"]].map(x=>'<option '+(v.status===x[0]?'selected':'')+' value="'+x[0]+'">'+x[1]+'</option>').join("")+'</select></div></div></div>';
+  h+='<div class="v4-section"><h3>1. Care tier + 2. Property plan</h3><div class="frow"><div><label class="fl">Care tier</label><select class="fi" onchange="v4Set(\'tier\',this.value)">'+Object.keys(CVCS_TIERS).map(x=>'<option '+(v.tier===x?'selected':'')+' value="'+x+'">'+CVCS_TIERS[x].name+' — '+CVCS_TIERS[x].cadence+'</option>').join("")+'</select></div><div><label class="fl">Property plan</label><select class="fi" onchange="v4Set(\'siteType\',this.value)">'+Object.keys(CVCS_SITES).map(x=>'<option '+(v.siteType===x?'selected':'')+' value="'+x+'">'+CVCS_SITES[x].name+'</option>').join("")+'</select></div></div><div class="frow"><div><label class="fl">Condition</label><select class="fi" onchange="v4Set(\'condition\',this.value)">'+["Excellent","Good","Fair","Poor","Recovery"].map(x=>'<option '+(v.condition===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div><div><label class="fl">Weed level</label><select class="fi" onchange="v4Set(\'weedLevel\',this.value)">'+[["none","No problem"],["light","Some weeds"],["moderate","Moderate weeds"],["severe","Severe weeds"]].map(x=>'<option '+(v.weedLevel===x[0]?'selected':'')+' value="'+x[0]+'">'+x[1]+'</option>').join("")+'</select></div></div></div>';
+  h+='<div class="v4-section"><h3>What is at this property?</h3><div class="frow"><div><label class="fl">Grass type</label><select class="fi" onchange="v4Set(\'grassType\',this.value)">'+["Not identified","Tall fescue - verify","Tall fescue","Bermuda","Hybrid Bermuda","Ryegrass","Bluegrass blend","St. Augustine","Zoysia","Mixed / unknown"].map(x=>'<option '+(v.grassType===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div><div><label class="fl">Known weeds</label><input class="fi" value="'+esc(v.knownWeeds)+'" placeholder="Crabgrass, spurge, nutsedge..." onchange="v4Set(\'knownWeeds\',this.value)"></div></div><label class="fl">Disease / fungus history</label><input class="fi" value="'+esc(v.knownDisease)+'" placeholder="Symptoms, dates, active ingredient if known" onchange="v4Set(\'knownDisease\',this.value)"><label class="fl">Important trees, shrubs, roses and plantings</label><input class="fi" value="'+esc(v.knownPlants)+'" placeholder="Redwoods, roses, olives, crape myrtles..." onchange="v4Set(\'knownPlants\',this.value)"></div>';
+  h+='<div class="v4-section"><h3>3. Add-on programs</h3><div class="rsub">Green buttons are active on this property. Tap any button to add or remove it.</div><div class="v4-chips">'+V4_PROGRAMS.map(p=>'<button class="v4-chip" style="'+(v.programs.includes(p[0])?'background:#dcefDC;color:#225c28;border:2px solid #3f7a3f':'border:2px solid #d8d5cc')+'" onclick="v4Program(\''+p[0]+'\')">'+p[1]+'</button>').join("")+'</div></div>';
+  h+=v4ProgramTrackersHTML(a,v);
+  h+=v4IrrigationSummaryHTML(a);
+  h+='<div class="v4-section"><h3>Month-by-month profile</h3>'+MONTHS.map(m=>'<div class="timeline-row '+(m===month?'now':'')+'"><b>'+m+'</b><span>'+esc(v4AccountMonthText(a,v,m))+'</span></div>').join("")+'</div>';
+  h+='<div class="v4-section"><h3>Inspection history</h3>'+(walks.length?walks.slice(0,8).map(w=>'<div class="v4-program"><span class="v4-dot '+(w.score<60?'red':w.score<85?'yellow':'')+'"></span><b>Walk-through · '+w.date+'</b><span>'+w.score+'%</span></div>').join(""):'<div class="rsub">No walk-throughs saved yet.</div>')+'</div>';
+  h+=v4AccountReportHistoryHTML(a);
+  h+='<div class="v4-actions"><button class="btn orange" onclick="v4WalkStart(\''+a.id+'\')">📋 Start Walk-Through</button><button class="btn" onclick="v4PDF(\''+a.id+'\')">📄 Account PDF</button><button class="btn ghost" onclick="openAcct(\''+a.id+'\');v4Acct=null">⚙️ Full Account Tools</button></div></div></div><div class="mfoot"><span style="flex:1"></span><button class="btn ghost" onclick="v4Acct=null;render()">Close</button></div></div></div>';
   return h;
 }
-async function v4Set(k,val){const v=v4Data(v4Acct);v[k]=val;await save();}
-async function v4Program(p){const v=v4Data(v4Acct),i=v.programs.indexOf(p);if(i>=0)v.programs.splice(i,1);else v.programs.push(p);await save();}
-function v4WalkStart(id){
-  const aid=id||v4Acct||(ACC()[0]&&ACC()[0].id);v4Acct=null;
-  v4Walk={accountId:aid,date:new Date().toISOString().slice(0,10),inspector:"Michael",checks:{},notes:"",ph:"",moisture:"",urgent:false};render();
+async function v4Set(k,val){const v=v4Data(v4Acct);v[k]=val;if(k==="next")v.nextManual=!!val.trim();if(k==="weedLevel"&&val!=="none"&&!v.programs.includes("weed"))v.programs.push("weed");await save();}
+async function v4Program(p){const v=v4Data(v4Acct),i=v.programs.indexOf(p);if(i>=0)v.programs.splice(i,1);else{v.programs.push(p);if(!v4Enrollments(v4Acct,true).some(e=>e.type===v4WorkflowType(p)))S.v4.enrollments.push(v4MakeEnrollment(v4Acct,v4WorkflowType(p),new Date().toISOString().slice(0,10)));}await save();}
+function v4IrrData(id){v4Ensure();return S.v4.irrigation[id]||(S.v4.irrigation[id]={notes:"",controllers:[]});}
+function v4IrrigationSummaryHTML(a){
+  const irr=v4IrrData(a.id),timers=irr.controllers.length,zones=irr.controllers.reduce((n,t)=>n+(t.stations||[]).length,0),open=irr.controllers.reduce((n,t)=>n+(t.stations||[]).filter(s=>/verify|unknown|repair/i.test((s.delivery||"")+" "+(s.note||""))).length,0);
+  return '<div class="v4-section"><h3>Integrated irrigation profile</h3><div class="rsub">Fertilizer, fungus, seed and recovery checklists all require irrigation checks. Save every timer, program and station here.</div><div class="irr-summary"><div class="irr-stat"><b>'+timers+'</b><span>CONTROLLERS</span></div><div class="irr-stat"><b>'+zones+'</b><span>MAPPED STATIONS</span></div><div class="irr-stat"><b>'+open+'</b><span>VERIFY / REPAIR</span></div></div><button class="btn" style="width:100%;margin-top:10px;background:#2563eb;color:#fff" onclick="v4IrrOpen(\''+a.id+'\')">💧 Open Irrigation System</button></div>';
 }
+function v4IrrOpen(id){v4Acct=null;irrigationAcct=id;render();}
+async function v4IrrSet(ci,field,value){const c=v4IrrData(irrigationAcct).controllers[ci];if(!c)return;c[field]=value;await save();}
+async function v4IrrNotes(value){v4IrrData(irrigationAcct).notes=value;await save();}
+async function v4StationSet(ci,si,field,value){const s=v4IrrData(irrigationAcct).controllers[ci].stations[si];if(!s)return;s[field]=field==="no"?(parseInt(value)||value):value;await save();}
+async function v4AddTimer(){const irr=v4IrrData(irrigationAcct);irr.controllers.push({id:"T-"+Date.now(),name:"New Controller",brand:"",model:"",location:"",owner:"CVCS",programs:[],stations:[]});await save();}
+async function v4AddStation(ci){const c=v4IrrData(irrigationAcct).controllers[ci],next=(c.stations||[]).reduce((n,s)=>Math.max(n,parseInt(s.no)||0),0)+1;c.stations=c.stations||[];c.stations.push({no:next,area:"",zone:"Grass",delivery:"Verify head type",program:"A",note:""});await save();}
+function irrigationHTML(){
+  if(!irrigationAcct)return"";const a=findAcc(irrigationAcct);if(!a)return"";const irr=v4IrrData(irrigationAcct);
+  let body='<div class="easy-callout" style="background:linear-gradient(135deg,#22578d,#357db5)"><span class="call-icon">💧</span><div><b>'+esc(a.name)+' irrigation system</b><span>Map each controller and every station. Program checklists will point here before fertilizer, fungus, seed or recovery work.</span></div></div>';
+  if(!irr.controllers.length)body+='<div class="empty"><b>No controller entered yet</b><p>Tap Add Controller to build the property map.</p></div>';
+  irr.controllers.forEach((c,ci)=>{
+    body+='<div class="timer-card"><div class="timer-head"><div><b>⏱️ '+esc(c.name||("Controller "+(ci+1)))+'</b><span>'+esc(c.brand||"Brand not entered")+' '+esc(c.model||"")+' · '+esc(c.location||"Location not entered")+'</span></div><span class="v4-badge">'+(c.stations||[]).length+' STATIONS</span></div><div class="frow"><div><label class="fl">Controller name</label><input class="fi" value="'+esc(c.name||"")+'" onchange="v4IrrSet('+ci+',\'name\',this.value)"></div><div><label class="fl">Location</label><input class="fi" value="'+esc(c.location||"")+'" placeholder="Garage wall, planter, utility room" onchange="v4IrrSet('+ci+',\'location\',this.value)"></div></div><div class="frow"><div><label class="fl">Brand</label><input class="fi" value="'+esc(c.brand||"")+'" placeholder="Hunter, Rain Bird, Irritrol" onchange="v4IrrSet('+ci+',\'brand\',this.value)"></div><div><label class="fl">Model</label><input class="fi" value="'+esc(c.model||"")+'" onchange="v4IrrSet('+ci+',\'model\',this.value)"></div><div><label class="fl">Who controls it?</label><input class="fi" value="'+esc(c.owner||"")+'" onchange="v4IrrSet('+ci+',\'owner\',this.value)"></div></div>';
+    if((c.programs||[]).length)body+='<div class="program-heading" style="font-size:16px;margin:16px 0 5px">Timer programs</div>'+(c.programs||[]).map(p=>'<div class="irr-program"><b>'+esc(p.name)+'</b><span>'+esc(p.detail)+'</span></div>').join("");
+    if(c.seasonal)body+='<div class="program-heading" style="font-size:16px;margin:16px 0 5px">Seasonal settings</div><div class="program-months">'+MONTHS.map(m=>'<div class="program-month '+(m===month?'now':'')+'"><b>'+m+'</b><span>'+esc(c.seasonal[m]||"No seasonal setting entered")+'</span></div>').join("")+'</div>';
+    body+='<div class="program-heading" style="font-size:16px;margin:16px 0 5px">Station map</div><div class="station-grid"><span class="station-head">Station</span><span class="station-head">Area</span><span class="station-head">Plant / zone</span><span class="station-head">Head / delivery</span>'+(c.stations||[]).map((s,si)=>'<input class="fi" inputmode="numeric" value="'+esc(String(s.no))+'" onchange="v4StationSet('+ci+','+si+',\'no\',this.value)"><input class="fi" value="'+esc(s.area||"")+'" placeholder="Front lawn" onchange="v4StationSet('+ci+','+si+',\'area\',this.value)"><select class="fi" onchange="v4StationSet('+ci+','+si+',\'zone\',this.value)">'+["Grass","Planter","Shrubs","Flowers","Trees","Vegetable","Pond / Water Feature","Other"].map(x=>'<option '+(s.zone===x?'selected':'')+'>'+x+'</option>').join("")+'</select><input class="fi" value="'+esc(s.delivery||"")+'" placeholder="Pop-up, rotor, drip, jet, spaghetti" onchange="v4StationSet('+ci+','+si+',\'delivery\',this.value)">').join("")+'</div><button class="btn" style="margin-top:10px" onclick="v4AddStation('+ci+')">＋ Add Station</button></div>';
+  });
+  body+='<label class="fl">Property irrigation rules and notes</label><textarea class="fi" rows="4" onchange="v4IrrNotes(this.value)">'+esc(irr.notes||"")+'</textarea>';
+  return '<div class="modalwrap"><div class="modal"><div class="mhead"><span>Irrigation System</span><button class="xbtn" onclick="irrigationAcct=null;render()">✕</button></div><div class="mbody">'+body+'</div><div class="mfoot"><button class="btn" onclick="v4AddTimer()">＋ Add Controller</button><span style="flex:1"></span><button class="btn orange" onclick="irrigationAcct=null;v4Acct=\''+a.id+'\';render()">Back to Property</button></div></div></div>';
+}
+function v4WalkStart(id){const aid=id||v4Acct||(ACC()[0]&&ACC()[0].id),pv=v4Data(aid);v4Acct=null;v4Walk={accountId:aid,date:new Date().toISOString().slice(0,10),inspector:"Michael",checks:{},notes:"",ph:"",moisture:"",grassType:pv.grassType||"Not identified",weeds:pv.knownWeeds||"",disease:pv.knownDisease||"",plants:pv.knownPlants||"",urgent:false};render();}
+function v4WalkPick(key,value,btn){v4Walk.checks[key]=value;btn.parentElement.querySelectorAll("button").forEach(b=>b.classList.remove("on"));btn.classList.add("on");}
 function v4WalkHTML(){
-  if(!v4Walk)return"";const a=findAcc(v4Walk.accountId);
-  return '<div class="modalwrap"><div class="modal"><div class="mhead"><span>Property Walk-through</span><button class="xbtn" onclick="v4Walk=null;render()">✕</button></div><div class="mbody"><label class="fl">Account</label><select class="fi" onchange="v4Walk.accountId=this.value;render()">'+ACC().map(x=>'<option value="'+x.id+'" '+(x.id===v4Walk.accountId?'selected':'')+'>'+esc(x.name)+'</option>').join("")+'</select><div class="v4-section"><h3>Inspection checklist</h3>'+V4_WALK.map(x=>'<label class="v4-check"><input type="checkbox" '+(v4Walk.checks[x[0]]?'checked':'')+' onchange="v4Walk.checks[\''+x[0]+'\']=this.checked"><span>'+x[1]+'</span></label>').join("")+'</div><div class="v4-section"><h3>Measured soil information</h3><div class="frow"><div><label class="fl">pH (blank if not tested)</label><input class="fi" inputmode="decimal" value="'+esc(v4Walk.ph)+'" oninput="v4Walk.ph=this.value"></div><div><label class="fl">Moisture</label><select class="fi" onchange="v4Walk.moisture=this.value"><option></option><option>Dry</option><option>Good</option><option>Wet</option><option>Saturated</option></select></div></div></div><label class="fl">Observations, disease, leaves, grass, irrigation, recommendations</label><textarea class="fi" rows="5" oninput="v4Walk.notes=this.value">'+esc(v4Walk.notes)+'</textarea><label class="fchk"><input type="checkbox" onchange="v4Walk.urgent=this.checked"> Flag Michael — urgent follow-up</label></div><div class="mfoot"><button class="btn ghost" onclick="v4Walk=null;render()">Cancel</button><span style="flex:1"></span><button class="btn orange" onclick="v4WalkSave()">Save inspection</button></div></div></div>';
+  if(!v4Walk)return"";
+  const questions=V4_WALK.map(x=>{const val=v4Walk.checks[x[0]];return'<div class="walk-question"><span>'+x[1]+'</span><div class="walk-choices"><button class="walk-choice good '+(val==="good"||val===true?'on':'')+'" onclick="v4WalkPick(\''+x[0]+'\',\'good\',this)">✅ GOOD</button><button class="walk-choice watch '+(val==="watch"?'on':'')+'" onclick="v4WalkPick(\''+x[0]+'\',\'watch\',this)">👀 WATCH</button><button class="walk-choice bad '+(val==="bad"?'on':'')+'" onclick="v4WalkPick(\''+x[0]+'\',\'bad\',this)">🚨 FIX</button><button class="walk-choice na '+(val==="na"?'on':'')+'" onclick="v4WalkPick(\''+x[0]+'\',\'na\',this)">N/A</button></div></div>';}).join("");
+  return '<div class="modalwrap"><div class="modal"><div class="mhead"><span>Easy Property Walk-Through</span><button class="xbtn" onclick="v4Walk=null;render()">✕</button></div><div class="mbody">'+
+    '<label class="fl">Property</label><select class="fi" onchange="v4Walk.accountId=this.value;render()">'+ACC().map(x=>'<option value="'+x.id+'" '+(x.id===v4Walk.accountId?'selected':'')+'>'+esc(x.name)+'</option>').join("")+'</select>'+
+    '<div class="v4-section"><h3>Tap one answer for each item</h3>'+questions+'</div>'+
+    '<div class="v4-section"><h3>Identify what is here and what you found</h3><div class="frow"><div><label class="fl">Grass type</label><select class="fi" onchange="v4Walk.grassType=this.value">'+["Not identified","Tall fescue - verify","Tall fescue","Bermuda","Hybrid Bermuda","Ryegrass","Bluegrass blend","St. Augustine","Zoysia","Mixed / unknown"].map(x=>'<option '+(v4Walk.grassType===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div><div><label class="fl">Weeds found</label><input class="fi" value="'+esc(v4Walk.weeds)+'" placeholder="Crabgrass, spurge, nutsedge..." oninput="v4Walk.weeds=this.value"></div></div><label class="fl">Fungus / disease symptoms</label><input class="fi" value="'+esc(v4Walk.disease)+'" placeholder="Patch shape, blade marks, roots, dates" oninput="v4Walk.disease=this.value"><label class="fl">Important trees, shrubs and plantings</label><input class="fi" value="'+esc(v4Walk.plants)+'" oninput="v4Walk.plants=this.value"><button class="btn ghost" style="width:100%;margin-top:10px" onclick="v4WalkSave(true)">🩺 Save + Open Weed / Fungus Identifier</button></div>'+
+    '<div class="v4-section"><h3>Measurements</h3><div class="frow"><div><label class="fl">pH — leave blank if not tested</label><input class="fi" inputmode="decimal" value="'+esc(v4Walk.ph)+'" oninput="v4Walk.ph=this.value"></div><div><label class="fl">Soil moisture</label><select class="fi" onchange="v4Walk.moisture=this.value"><option></option>'+["Dry","Good","Wet","Saturated"].map(x=>'<option '+(v4Walk.moisture===x?'selected':'')+'>'+x+'</option>').join("")+'</select></div></div></div>'+
+    '<label class="fl">Talk or type what you see</label><textarea class="fi" rows="5" placeholder="Grass, weeds, fungus, leaves, irrigation, problems and recommendations" oninput="v4Walk.notes=this.value">'+esc(v4Walk.notes)+'</textarea><label class="fchk"><input type="checkbox" '+(v4Walk.urgent?'checked':'')+' onchange="v4Walk.urgent=this.checked"> 🚨 Flag Michael for urgent follow-up</label></div><div class="mfoot"><button class="btn ghost" onclick="v4Walk=null;render()">Cancel</button><span style="flex:1"></span><button class="btn orange" onclick="v4WalkSave()">Save Walk-Through</button></div></div></div>';
 }
-async function v4WalkSave(){
-  const done=V4_WALK.filter(x=>v4Walk.checks[x[0]]).length;v4Walk.score=Math.round(done/V4_WALK.length*100);v4Walk.id="W-"+Date.now();
-  S.v4.walks.push(v4Walk);const v=v4Data(v4Walk.accountId);v.condition=v4Walk.score>=90?"Excellent":v4Walk.score>=75?"Good":v4Walk.score>=50?"Fair":"Poor";
-  if(v4Walk.urgent){v.status="urgent";v.next="Review urgent walk-through findings";v.nextDate=new Date().toISOString().slice(0,10);S.v4.actions.push({id:"A-"+Date.now(),accountId:v4Walk.accountId,text:v.next,due:v.nextDate,done:false});}
-  v4Walk=null;await save();
+async function v4WalkSave(openIdentifier){
+  const rated=V4_WALK.map(x=>v4Walk.checks[x[0]]).filter(x=>x&&x!=="na"),points=rated.reduce((n,x)=>n+(x===true||x==="good"?100:x==="watch"?60:0),0);v4Walk.score=rated.length?Math.round(points/rated.length):0;v4Walk.id="W-"+Date.now();
+  S.v4.walks.push(v4Walk);const v=v4Data(v4Walk.accountId);v.condition=v4Walk.score>=90?"Excellent":v4Walk.score>=75?"Good":v4Walk.score>=50?"Fair":"Poor";v.grassType=v4Walk.grassType||v.grassType;v.knownWeeds=v4Walk.weeds||v.knownWeeds;v.knownDisease=v4Walk.disease||v.knownDisease;v.knownPlants=v4Walk.plants||v.knownPlants;
+  if(["watch","bad"].includes(v4Walk.checks.weeds)){if(!v.programs.includes("weed"))v.programs.push("weed");v.weedLevel=v4Walk.checks.weeds==="bad"?"severe":"moderate";if(!v4Enrollments(v4Walk.accountId,true).some(e=>e.type==="weed"))S.v4.enrollments.push(v4MakeEnrollment(v4Walk.accountId,"weed",v4Walk.date));}
+  if(["watch","bad"].includes(v4Walk.checks.disease)){if(!v.programs.includes("fungus"))v.programs.push("fungus");if(!v4Enrollments(v4Walk.accountId,true).some(e=>e.type==="fungus"))S.v4.enrollments.push(v4MakeEnrollment(v4Walk.accountId,"fungus",v4Walk.date));}
+  if(["watch","bad"].includes(v4Walk.checks.water)||["watch","bad"].includes(v4Walk.checks.controller)||["watch","bad"].includes(v4Walk.checks.heads)){if(!v.programs.includes("irrigation"))v.programs.push("irrigation");if(!v4Enrollments(v4Walk.accountId,true).some(e=>e.type==="irrigation"))S.v4.enrollments.push(v4MakeEnrollment(v4Walk.accountId,"irrigation",v4Walk.date));}
+  if(v4Walk.urgent||rated.includes("bad")){v.status="urgent";v.next="Review walk-through problems and assign corrective work";v.nextManual=true;v.nextDate=new Date().toISOString().slice(0,10);S.v4.actions.push({id:"A-"+Date.now(),accountId:v4Walk.accountId,text:v.next,due:v.nextDate,done:false});}
+  v4Walk=null;if(openIdentifier){libTab="diag";tab="library";}await save();
 }
-function v4PDF(id){
-  const a=findAcc(id),v=v4Data(id),walks=S.v4.walks.filter(w=>w.accountId===id).slice(-6);const J=window.jspdf&&window.jspdf.jsPDF;if(!J){alert("PDF library unavailable.");return;}
-  const d=new J();d.setFontSize(18);d.text("CVCS PROPERTY PROFILE",15,18);d.setFontSize(12);d.text(a.name,15,28);d.setFontSize(9);d.text((a.addr||"")+" | Route "+a.route+" | "+a.day,15,35);d.text("Status: "+v.status.toUpperCase()+" | Tier: "+v.tier.toUpperCase()+" | Condition: "+v.condition,15,43);d.text("Next: "+v.next+(v.nextDate?" — "+v.nextDate:""),15,50,{maxWidth:180});let y=61;d.setFontSize(11);d.text("Active programs",15,y);y+=6;d.setFontSize(9);d.text(v.programs.map(p=>(V4_PROGRAMS.find(x=>x[0]===p)||[p,p])[1]).join(", ")||"None",15,y,{maxWidth:180});y+=12;d.setFontSize(11);d.text("Recent walk-throughs",15,y);y+=7;d.setFontSize(9);walks.forEach(w=>{d.text(w.date+" — "+w.score+"%"+(w.urgent?" — URGENT":""),15,y);y+=6;if(w.notes){d.text(w.notes,20,y,{maxWidth:170});y+=12;}});d.save("CVCS-"+a.name.replace(/[^a-z0-9]+/gi,"-")+"-Profile.pdf");
+function v4PDF(id,noRecord){
+  const a=findAcc(id);if(!a)return;const v=v4Data(id),walks=S.v4.walks.filter(w=>w.accountId===id).slice(-8),irr=v4IrrData(id),enroll=v4Enrollments(id,false),J=window.jspdf&&window.jspdf.jsPDF;if(!J){alert("PDF library unavailable.");return;}
+  const d=new J({unit:"pt",format:"letter"});pdfHeader(d,"PROPERTY PROFILE - "+a.name.toUpperCase(),(a.addr||"Address not entered")+" · Route "+a.route+" · "+a.day);
+  d.autoTable({startY:64,margin:{left:28,right:28,bottom:52},head:[["STATUS","CARE TIER","PROPERTY PLAN","CONDITION"]],body:[[v4Status(v)[1],v4TierLabel(v.tier),v4SiteLabel(v.siteType),v.condition]],styles:{fontSize:8.5,cellPadding:5},headStyles:{fillColor:NAVY}});
+  d.autoTable({startY:d.lastAutoTable.finalY+6,margin:{left:28,right:28,bottom:52},head:[["GRASS TYPE","WEEDS","DISEASE / FUNGUS HISTORY","IMPORTANT PLANTS"]],body:[[v.grassType||"Not identified",v.knownWeeds||"None recorded",v.knownDisease||"None recorded",v.knownPlants||"None recorded"]],styles:{fontSize:7.2,cellPadding:4},headStyles:{fillColor:[63,122,63]}});
+  let y=d.lastAutoTable.finalY+12;d.setFont("helvetica","bold");d.setFontSize(10);d.setTextColor(...ORANGE);d.text("NEXT ACTION",28,y);y+=12;d.setFont("helvetica","normal");d.setFontSize(8.5);d.setTextColor(32,41,56);d.text(d.splitTextToSize(v4Next(a,v)+(v.nextDate?" - "+v.nextDate:""),556),28,y);y+=24;
+  const active=enroll.filter(e=>e.status==="active");if(active.length){d.autoTable({startY:y,margin:{left:28,right:28,bottom:52},head:[["ACTIVE PROGRAM","PROGRESS","NEXT DUE","NEXT STEP"]],body:active.map(e=>{const st=v4EnrollmentState(e);return[e.name,st.pct+"%",st.next?st.next.due:"Complete",st.next?st.next.task:"All steps complete"];}),styles:{fontSize:7.5,cellPadding:4},headStyles:{fillColor:[124,58,237]}});y=d.lastAutoTable.finalY+12;}
+  d.autoTable({startY:y,margin:{left:28,right:28,bottom:52},head:[["MONTH","TIER / PROPERTY WORK PLAN"]],body:MONTHS.map(m=>[m,v4AccountMonthText(a,v,m)]),styles:{fontSize:7.5,cellPadding:4},headStyles:{fillColor:NAVY},alternateRowStyles:{fillColor:[242,241,236]},columnStyles:{0:{cellWidth:62,fontStyle:"bold"}}});
+  y=d.lastAutoTable.finalY+12;if(irr.controllers.length){irr.controllers.forEach((c,ci)=>{d.autoTable({startY:y,margin:{left:28,right:28,bottom:52},head:[["CONTROLLER","LOCATION","OWNER / CONTROL","STATIONS"]],body:[[c.name||("Controller "+(ci+1)),c.location||"Not entered",c.owner||"Not entered",(c.stations||[]).length]],styles:{fontSize:7.5,cellPadding:4},headStyles:{fillColor:[34,87,141]}});y=d.lastAutoTable.finalY+6;if((c.stations||[]).length){d.autoTable({startY:y,margin:{left:36,right:36,bottom:52},head:[["#","AREA","ZONE","HEAD / DELIVERY","PROGRAM / NOTE"]],body:c.stations.map(s=>[s.no,s.area,s.zone,s.delivery,(s.program||"")+(s.note?" · "+s.note:"")]),styles:{fontSize:6.8,cellPadding:3},headStyles:{fillColor:[76,121,160]}});y=d.lastAutoTable.finalY+10;}});}
+  if(walks.length){d.autoTable({startY:y,margin:{left:28,right:28,bottom:52},head:[["INSPECTION DATE","SCORE","MOISTURE","URGENT","NOTES"]],body:walks.map(w=>[w.date,w.score+"%",w.moisture||"-",w.urgent?"YES":"No",w.notes||""]),styles:{fontSize:7,cellPadding:4},headStyles:{fillColor:NAVY}});}
+  pdfFooter(d);const filename="CVCS-"+a.name.replace(/[^a-z0-9]+/gi,"-")+"-Property-Profile.pdf";if(noRecord)d.save(filename);else v4DeliverPDF(d,filename,"account","Property Profile - "+a.name,id);
 }
 
 
@@ -2332,8 +2777,9 @@ function modsHTML(){
   const lawnOpts=Object.keys(p).filter(c=>p[c].kind==="lawn"||p[c].kind==="lawn-liquid");
   const bedOpts=Object.keys(p).filter(c=>p[c].kind==="bed");
   const anyOpts=Object.keys(p).filter(c=>!["tree","gear"].includes(p[c].kind));
-  const sched_g=a.lawn>0?(DATA.grassCal[a.tier]||{})[month]:null;
-  const sched_b=a.bed>0?(DATA.bedCal[a.tier]||{})[month]:null;
+  const cal=v4CalendarFor(a);
+  const sched_g=a.lawn>0?(cal.grass||{})[month]:null;
+  const sched_b=a.bed>0?(cal.bed||{})[month]:null;
   const sel=(id,opts,cur,none)=>'<select class="fi" id="'+id+'" onchange="dSwap(\''+id.slice(2)+'\',this.value)">'+
     '<option value="">'+none+'</option>'+
     opts.map(c=>'<option value="'+c+'"'+(c===cur?" selected":"")+'>'+esc(p[c].name)+"</option>").join("")+'</select>';
@@ -2380,8 +2826,9 @@ function historyRows(){
     const a=findAcc(id)||DATA.accounts.find(x=>x.id===id)||{name:id,route:"?",day:""};
     let code=null;
     const mod=modOf(id,mo,yr);
-    if(kind==="lawn") code=(mod&&mod.lawn)||(DATA.grassCal[a.tier]||{})[mo];
-    else if(kind==="bed") code=(mod&&mod.bed)||(DATA.bedCal[a.tier]||{})[mo];
+    const cal=v4CalendarFor(a);
+    if(kind==="lawn") code=(mod&&mod.lawn)||(cal.grass||{})[mo];
+    else if(kind==="bed") code=(mod&&mod.bed)||(cal.bed||{})[mo];
     else if(kind==="seed"){const asp=S.aerseed[yr]; code=(asp&&asp.cfg[id])?asp.cfg[id].seed:null;}
     else if(kind==="aer"){code=null;}
     else if(kind.charAt(0)==="x"){const i=parseInt(kind.slice(1)); code=(mod&&mod.extras&&mod.extras[i])?mod.extras[i].code:null;}
@@ -2747,8 +3194,9 @@ async function setNote(id,v){S.acctNotes[id]=v;await saveQuiet();}
 function acctYear(a){
   return MONTHS.map(m=>{
     const key=year+"-"+m, mod=(S.monthMods[key]||{})[a.id];
-    let g=a.lawn>0?(DATA.grassCal[a.tier]||{})[m]:null;
-    let b=a.bed>0?(DATA.bedCal[a.tier]||{})[m]:null;
+    const cal=v4CalendarFor(a);
+    let g=a.lawn>0?(cal.grass||{})[m]:null;
+    let b=a.bed>0?(cal.bed||{})[m]:null;
     const t=a.trees?DATA.treeCal[m]:null;
     if(mod){if(g&&mod.lawn)g=mod.lawn; if(b&&mod.bed)b=mod.bed;}
     const x=(mod&&mod.extras)||[];
@@ -3221,8 +3669,9 @@ function agExpand(x){
 
 function monthParts(a){
   const key=year+"-"+month, mod=(S.monthMods[key]||{})[a.id];
-  let g=a.lawn>0?(DATA.grassCal[a.tier]||{})[month]:null;
-  let b=a.bed>0?(DATA.bedCal[a.tier]||{})[month]:null;
+  const cal=v4CalendarFor(a);
+  let g=a.lawn>0?(cal.grass||{})[month]:null;
+  let b=a.bed>0?(cal.bed||{})[month]:null;
   const t=a.trees?DATA.treeCal[month]:null;
   if(mod){if(g&&mod.lawn)g=mod.lawn; if(b&&mod.bed)b=mod.bed;}
   const x=(mod&&mod.extras)||[];
@@ -3375,8 +3824,7 @@ function stepper(id,kind,lab,val,learned){
 }
 
 loadUI();
-loadStore().then(render);
+loadStore().then(async()=>{v4Ensure();await saveQuiet();render();});
 </script>
 </body>
 </html>
-
